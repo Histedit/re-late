@@ -129,14 +129,15 @@ style say_thought is say_dialogue
 style namebox is default
 style namebox_label is say_label
 
+default gui.xdirection = 0.0
 
 style window:
-    xalign 0.25
+    xalign gui.direction
     xfill True
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.25, yalign=1.0)
+    background Image("gui/textbox.png", xalign=gui.xdirection, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
@@ -208,6 +209,7 @@ screen choice(items):
     style_prefix "choice"
 
     vbox:
+        xalign 0.25
         for i in items:
             textbutton i.caption action i.action
 
@@ -216,13 +218,12 @@ screen choice(items):
 ## menu captions will be displayed as empty buttons.
 define config.narrator_menu = True
 
-
 style choice_vbox is vbox
 style choice_button is button
 style choice_button_text is button_text
 
 style choice_vbox:
-    xalign 0.25
+    xalign gui.xdirection
     ypos 405
     yanchor 0.5
 
