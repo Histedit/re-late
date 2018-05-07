@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<samples ssi-v="3">
+    <info ftype="BINARY" size="64" missing="false" garbage="0" />
+    <streams>
+        <item path="sadness.compare.samples.#0" />
+    </streams>
+    <classes>
+        <item name="anger" size="0" />
+        <item name="boredom" size="0" />
+        <item name="disgust" size="0" />
+        <item name="fear" size="0" />
+        <item name="happiness" size="0" />
+        <item name="neutral" size="0" />
+        <item name="sadness" size="64" />
+    </classes>
+    <users>
+        <item name="NOBODY" size="64" />
+    </users>
+</samples>

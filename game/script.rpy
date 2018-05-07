@@ -1,5 +1,49 @@
-﻿define e = Character('아이린', color="#c8ffc8")
-define s = Character('서은', color="#222")
+﻿
+default bg_left = False
+
+transform tcommon(x=640, z=1):
+    yanchor 1.0 subpixel True
+    on show:
+        ypos 1.05
+        zoom z*0.95 alpha 0.00
+        xcenter x yoffset -20
+        easein .25 yoffset 0 zoom z*1.00 alpha 1.00
+    on replace:
+        alpha 1.00
+        parallel:
+            easein .25 xcenter x zoom z*1.00
+        parallel:
+            easein .15 yoffset 0 ypos 1.05
+
+transform n_cg2_wiggle:
+    subpixel True
+    xoffset 0
+    easein 0.15 xoffset 20
+    easeout 0.15 xoffset 0
+    easein 0.15 xoffset -15
+    easeout 0.15 xoffset 0
+    easein 0.15 xoffset 10
+    easeout 0.15 xoffset 0
+    easein 0.15 xoffset -5
+    ease 0.15 xoffset 0
+
+
+transform t21: 
+    tcommon(400)
+transform t22:
+    tcommon(880)
+transform t11:
+    tcommon(960)
+
+define dissolve_scene_full = MultipleTransition([
+    False, Dissolve(1.0),
+    Solid("#000"), Pause(1.0),
+    Solid("#000"), Dissolve(1.0),
+    True])
+
+init python:
+    _preferences.afm_enable = True
+    _preferences.afm_time = 15
 
 label left:
     $ gui.direction = 0.25
@@ -13,163 +57,667 @@ label right:
     $ gui.rebuild()
     return
 
-image ch01_bg = "b.png"
+init python:
+    import subprocess
+    dic = {}
+    dic["ch01_1plyr"]="positive"
+    dic["ch01_2plyr"]="sad"
+    dic["ch02_1plyr"]="positive"
+    dic["ch02_2plyr"]="positive"
+    dic["ch02_3plyr_a"]="positive"
+    dic["ch02_3plyr_b"]="positive"
+    process_list = []
+    _process = ["xmlpipe.exe"]
+    process_list = subprocess.check_output("wmic process get Description", shell=True).lower().replace("\r", "").replace(" ", "").split("\n")
+    if not list(set(process_list).intersection(_process)):
+        subprocess.call("C:\\Users\\boa65\\Downloads\\2dTest_Student\\re-late\\game\\do_justrun.cmd",shell=True)
+
+label qus(q):
+    python:
+        num = 0
+        say(None,".")
+        #import subprocess
+        import os
+        import io
+        subprocess.call("del C:\\Users\\boa65\\Downloads\\2dTest_Student\\re-late\\game\\result.txt",shell=True)
+        subprocess.Popen(['C:\\Users\\boa65\\Anaconda3\\python.exe', 'C:\\Users\\boa65\\Downloads\\2dTest_Student\\re-late\\game\\_test.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE,shell=True)
+        comm = "C:\\Users\\boa65\\Downloads\\2dTest_Student\\re-late\\game\\result.txt"
+        while(1):
+            num += 1
+            say(None,"."*(num%3+1))
+            if(os.path.isfile(comm)):
+                break
+        #a,b,c,d = result.encode(encoding='UTF-8',errors='strict').splitlines()
+        #result = "d"
+        f = io.open(comm, mode="r", encoding="utf-8")
+        a,b = f.read().splitlines()
+        f.close()
+        say(None,a)
+    return
+
+define s = Character(u'서은', image='', what_prefix='"', what_suffix='"', say_who_window_background="gui/yellow_nt.png")
+define h = Character(u'효주', image='', what_prefix='"', what_suffix='"', say_who_window_background="gui/pink_nt.png")
+define d = Character(u'???', image='', what_prefix='"', what_suffix='"', say_who_window_background="gui/mint_nt.png")
+
+image se 1 = im.Composite((1920, 1211), (0, 0), "images/se_normal.png")
+image se 2 = im.Composite((1920, 1211), (0, 0), "images/se_sad.png")
+image se 3 = im.Composite((1920, 1211), (0, 0), "images/se_smile.png")
+image se 4 = im.Composite((1920, 1211), (0, 0), "images/se_surprise.png")
+image se 5 = im.Composite((1920, 1211), (0, 0), "images/se_anger.png")
+
+image hj 1 = im.Composite((1920, 1211), (0, 0), "images/hj_normal.png")
+image hj 2 = im.Composite((1920, 1211), (0, 0), "images/hj_sad.png")
+image hj 3 = im.Composite((1920, 1211), (0, 0), "images/hj_smile.png")
+image hj 4 = im.Composite((1920, 1211), (0, 0), "images/hj_surprise.png")
+image hj 5 = im.Composite((1920, 1211), (0, 0), "images/hj_anger.png")
+
+
+image cr1_day = "cr1_day.jpg"
+image cr1_night = "cr1_night.jpg"
+image cr2_day = "cr2_day.jpg"
+image cr2_night = "cr2_night.jpg"
+image hall_day = "hall_day.jpg"
+image hall_night = "hall_night.jpg"
+image present_day = "back.png"
+    
+$ style.say_dialogue = style.normal
+
+label splashscreen:
+    $ renpy.movie_start_displayable("intro_final.webm")
+    scene black
+    with dissolve_scene_full
+
+image ctc:
+    xalign 0.81 yalign 0.98 xoffset -5 alpha 0.0 subpixel True
+    "ctc.png"
+    block:
+        easeout 0.75 alpha 1.0 xoffset 0
+        easein 0.75 alpha 0.5 xoffset -5
+        repeat
+
 label start:
 
     call ch01_main
     call ch02_main
+    call ch03_main
+    call ch05_main
+    call ch06_main
+    call ch07_main
 
     return
 
+label nd2_start:
+
+    call ch10_main
+    call ch01_main
+    call ch02_main
+    call ch03_main
+    call ch05_main
+    call ch06_main
+    call ch07_main
+    return
+
 label ch01_main:
-    scene ch01_bg
+    $ renpy.pause(1.0)
+    scene black
+    play music "jb.mp3"
     "2008년, 봄. XX고등학교."
     s "…야."
     "어디선가 목소리가 들린다."
     s "야."
     "목소리가 꽤 또렷하게 들리지만 고개는 여전히 무겁다. 아직 일어나기 싫다."
-    call right
     s "일어나. 점심시간이야."
+    scene cr1_day
+    with dissolve_scene_full
+    show se 3 at t11
     "몽롱한 정신으로 고개를 들어 보니 어느 여자아이가 서 있다."
-    s "점심시간이라니까? 수업 중에 잠이나 자고. 양아치네. 아무튼 점심 먹으러 안 가?"
-    menu:
-        "갈게 갈게":
-            s "그럼 빨리 일어나. 너 때문에 밥 먹을 시간이 줄고 있잖아."
-        "안먹을래":
-            s "지금 가야 맛있는 것 많이 먹을 수 있단 말이야. 빨리 나와."
-        "의이에에이ㅣ잉??!???!":
-            s "갑자기 무슨 헛소리야. 빨리 나오기나 해. 나 배고파."
-    #call ar ("ch01_ans")
-    #if ch01_ans == "pos":
-    #    s "그럼 빨리 일어나. 너 때문에 밥 먹을 시간이 줄고 있잖아." 
-    #elif ch01_ans == "neg":
-    #    s "지금 가야 맛있는 것 많이 먹을 수 있단 말이야. 빨리 나와."
-    #else:
-    #   s "갑자기 무슨 헛소리야. 빨리 나오기나 해. 나 배고파."
-    "이럴 거면 왜 물어 본건지… 결국 잠이 덜 깬 몸을 일으켜 급식실로 향한다."
+    show se 1 at t11
+    s "점심시간이라니까? 수업 중에 잠이나 자고. 양아치네. 아무튼 점심 먹으러 안 가?" #normal
+
+    call qus("ch01_1plyr")
+
+    if dic["ch01_1plyr"] == "positive":
+        show se 4 at t11
+        s "그럼 빨리 일어나. 너 때문에 밥 먹을 시간이 줄고 있잖아." #smile
+    elif dic["ch01_1plyr"] == "negative":
+        show se 4 at t11
+        s "지금 가야 맛난 거 많이 먹을 수 있단 말이야. 빨리 나와." #smile
+    elif dic["ch01_1plyr"] == "nonsense":
+        show se 4 at t11
+        s "갑자기 무슨 헛소리야? 빨리 나오기나 해. 나 배고프다니까." #smile
+
+    call qus("ch01_2plyr")
+
+    if dic["ch01_2plyr"] == "normal":
+        hide se
+        "이럴거면 왜 물어본건지... 결국 잠이 덜 깬 몸을 일으켜 급식실로 향한다."
+    elif dic["ch01_2plyr"] == "joy":
+        show se 1 at t11
+        s "......너 이상해." #normal
+        hide se
+        "결국 잠이 덜 깬 몸을 일으켜 급식실로 향한다."
+    elif dic["ch01_2plyr"] == "sad":
+        show se 3 at t11
+        s "안돼. 빨리 나와, 빨리!!!" #smile
+        hide se
+        "결국 잠이 덜 깬 몸을 일으켜 급식실로 향한다."
+    elif dic["ch01_2plyr"] == "anger":
+        show se 5 at t11
+        s "새삼스럽게 왜 화내. 익숙해질 때도 됐잖아. 어서 가자." #anger
+        hide se
+        "결국 잠이 덜 깬 몸을 일으켜 급식실로 향한다."
     return
 
-label ch02_main
-    이 아이의 이름은 서은. 당찬 성격인 아이라서 매번 나를 이런 식으로 질질 끌고 간다. 
-가끔 피곤하기는 하지만, 밉지는 않은. 3년째 붙어 다니는 나의 친구다.
-[A] 그나저나 날씨, 완전 따뜻해졌지 않아?
-[I] 긍정 - “(answer)” 부정 - “(answer)”
-[A] 긍정 – “그렇다니까. 벌써 부산 쪽은 벚꽃 다 펴서 이미 진다더라.”
-부정 – “이게? 원래 추위 많이 탔었나. 아무튼 약한 척 좀 하지마.”
-관계 없는 얘기 – “그 얘기가 왜 여기서 나와. 날씨가 따뜻해지지 않았냐고 물었잖아.”
-[A] 꽃구경 간 지가 언젠지를 모르겠다. 올해는 수능도 봐서 더 가기 눈치 보인다니까. 그런데 약간 올해에 더 가고 싶다고 느끼는 것 같아. 일탈 같은 느낌이잖아.
-[I] 긍정 – “(answer)” 부정 - “(answer)” 꽃구경 가자고 한다 - “(answer)” 
-[A] 긍정 – “앗, 그러면 오늘 나랑 같이 꽃구경 갈래? 나 혼자서 가면 죄책감들 것 같단 말이야.”
-부정 – “모범생인 척 좀 하지마. 그런 김에 나랑 오늘 벚꽃 보러 가자. 나 혼자 가면 심심해.”
-꽃구경 가자고 한다 – “엥? 너랑? 어... 그래! 좋지. 근데 나 오늘 밖에 시간 안 되는데 괜찮아?”
-[I] 꽃구경 거절 – “(answer)” 꽃구경 승낙 - “(answer)” 
-[A] 승낙 – “으음, 근데 나 오늘 밖에 시간 안되는데 괜찮아? 오늘 학교 끝나고 바로!” 
-거절 – “그렇지? 네가 나랑 꽃구경을 갈 리가 없지. 밥 다 먹었으니까 난 먼저 교실 간다!”
-[I] 오늘로 승낙 - “(answer)” 오늘은 거절 - “(answer)”
-[A] 승낙 – “그럼 수업 다 끝나고 보자!”
-거절 – “벚꽃 다 질 텐데… 그럼 내년에 가지 뭐. 수능도 다 끝나고 대학생일 테니까 시간도 많..지 않으려나. 아무튼! 난 먼저 교실 갈게.”
-[N] 꽃구경 가는 것이 그렇게 기쁜 일인가. 방방 뛰면서 올라가는 서은의 모습에 괜시리 웃음이 난다. 나도 슬슬 일어나서 다시 교실로 돌아가도록 하자.
-[N2] 이상하다. 평소 같은 모습인데 미묘하게 슬퍼 보였다. 하지만 곧 수업 시간이다. 생각을 그만두고 교실로 돌아가야 한다. 괜찮을거야. 항상 바보만치 밝은 애니까. 그런 애니까.
 
 
-label ch03_main
-    [B] “나랑 얘기 좀 해.”
-[N] 누군가가 갑자기 나를 불러 세운다. 옆 반의 B였다. 나랑 친하지도 않은 애가, 갑자기?
-[B] “할 얘기가 있어.”
-[I] 승낙 – “(answer)” 거절 - “(answer)”
-[B] 승낙 – “서은이에 대한 건데..”
-거절 – “서은이에 관한 이야기야. 들어줬으면 좋겠어..”
-[N] 참, 볼수록 서은이와 정반대되는 성격이다. 무뚝뚝하고, 소심한 말투. 얘기를 들을까?
-[I] 승낙 - “(answer)” 거절 - “(answer)”
-[B] 승낙 – “서은이에게 얘기하지 않을 거지?”
-거절 – “완고하네. 알겠어. 다만, 어떤 소문이 돌아다녀도 듣지마.”
-[I] 얘기하지 않겠다 - “(answer)” 들어보고 결정하겠다 - “(answer)”
-[B] “그래, 그건 네 선택이니까. 아무튼, 서은이가 너에 대해서 좋지 않은 소문을 퍼트리고 다녀.”
-[I] 이유 - “(answer)” (화난, 평이한, 슬픈)
-[B] 화난 어조 – “목소리 좀 낮춰줘. 애들이 다 듣겠다. 아무튼,”
-평이한 – “그게 말이야.”
-슬픈 – “울지는 마.. 뭐라고 했냐면”
-+ “네가 이 사람 저 사람 찔러보고 다닌다고도 하고, 사람을 계획적으로 이용한다고 했어. 나도 지나가다 들은 거여서 정확하지는 않은데, 네가 알아야 할 것 같아서.”
-[I] 화난 - “(answer)” 슬픈 - “(answer)” 이걸 말해주는 이유가 뭔지 - “(answer)” 서은이가 그럴 리 없다 - “(answer)”
-[B] 화난 – “제발, 화내지 말아줘.”
-슬픈 – “어.. 충격 받은 건 알겠지만 정신 똑바로 차리길 바라. 아직까지도 소문은 돌고 있어.”
-이유 – “그냥, 서은이가 어떤 애인지 알기를 바랐어. 너네 3년 내내 붙어 다녔잖아.” (다시 I의 반응, 감정 상태에 따른 대답 리턴)
-그럴 리 없어요 – “믿던 말던 그건 너의 자유기는 해. 하지만 적어도 3학년 내에서는 소문이 쫙 돌았어. 잘 판단하길 바랄게.”
-+”더 자세한 이야기가 듣고 싶으면 학교 끝나고 나를 찾아오기를 바라.”
-[N] 대답도 듣지 않은 채 B는 자신의 반으로 급하게 들어가버렸다. 나도 일단 교실로 들어가야겠다.
+label ch02_main:
+    scene hall_day
+    with dissolve_scene_full
+    show se 1 at t11
+    "이 아이의 이름은 서은. 당찬 성격인 아이라서 매번 나를 이런 식으로 질질 끌고 간다."
+    "가끔 피곤하기는 하지만 밉지는 않은, 3년째 붙어 다니는 나의 친구다."
+    show se 1 at t11
+    s "그나저나 날씨, 완전 따뜻해지지 않았어?" #normal
+
+    call qus("ch02_1plyr")
+
+    if dic["ch02_1plyr"] == "positive":
+        show se 3 at t11
+        s "그렇다니까. 벌써 부산 쪽은 벚꽃 다 펴서 이미 진다더라." #smile
+    elif dic["ch02_1plyr"] == "negative":
+        show se 4 at t11
+        s "이게? 원래 추위 많이 탔었나. 아무튼 약한 척은." #surprise
+    elif dic["ch02_1plyr"] == "nonsense":
+        show se 5 at t11
+        s "뭐라는 거야. 날씨가 따뜻해지지 않았냐고 물었잖아." #anger
+
+    show se 2 at t11
+    s "꽃구경 간 지가 언젠지 모르겠어. 올해는 수능도 봐서 가기가 더 눈치 보인다니까." #sad
+    show se 3 at t11
+    s "그런데 약간 올해라서 더 가고 싶은 것 같아. 일탈 같은 느낌이잖아." #smile
+
+    call qus("ch02_2plyr")
+
+    if dic["ch02_2plyr"] == "positive":
+        show se 1 at t11
+        s "앗, 그러면 나랑 같이 꽃구경 갈래? 나 혼자서 가면 죄책감 들 것 같단 말이야." #normal
+    elif dic["ch02_2plyr"] == "negative":
+        show se 1 at t11
+        s "모범생인 척 좀 하지 마. 그런 김에 나랑 벚꽃 보러 가자. 나 혼자 가면 심심해." #normal
+    elif dic["ch02_2plyr"] == "ask":
+        show se 4 at t11
+        s "엥 너랑? 어..." #surprise
+
+    call qus("ch02_3plyr_a")
+
+    if dic["ch02_3plyr_a"] == "positive":
+        show se 1 at t11
+        s "으음, 근데 나 오늘밖에 시간이 없는데 괜찮아? 오늘 학교 끝나고 바로!" #normal
+        
+        call qus("ch02_3plyr_b")
+
+        if dic["ch02_3plyr_b"] == "positive":
+            show se 3 at t11
+            s "그럼 수업 다 끝나고 보자!" #smile
+            hide se
+            "꽃구경 가는 것이 그렇게 기쁠 일인가. 방방 뛰면서 올라가는 서은이의 모습에 괜시리 웃음이 난다."
+            "나도 슬슬 일어나서 다시 교실로 돌아가도록 하자."
+
+            return
+        elif dic["ch02_3plyr_b"] == "negative":
+            show se 2 at t11
+            s "으으.. 나중은 벚꽃 다 질 텐데..." #sad
+            show se 3 at t11
+            s "그럼 내년에 가지 뭐. 수능도 다 끝나고 대학생일테니까, 시간도 많...지 않으려나." #smile
+            s "아무튼! 나는 먼저 교실 들어가볼게." #smile
+            hide se
+            "이상하다. 평소와 같은 모습인데 미묘하게 서은이의 표정이 슬퍼보였다."
+            "하지만 곧 수업 시간이다. 생각을 그만두고 교실로 돌아가야 한다."
+            "괜찮을 거야. 항상 바보처럼 밝은 애니까. 그런 애니까."
 
 
-label ch04_b
-    [N] 수업에 전혀 집중이 되지 않았다.
-[N] 사실일까? 서은이가 정말로 그랬을까? 아냐 그럴 리가 없어.
-[N] 사실이라면, 왜 그랬을까? 3년 동안 대체 나는 서은이와 무슨 사이였던 걸까?
-[N] 친구? 애초에 친구는 맞았던 것일까?
-[N] 아니다. 섣부른 판단은 금물이다. 당사자와 이야기를 나눠봐야 한다.
-[N] 하지만 진실이 두렵다. 나는 어떻게 해야 할까..
+    elif dic["ch02_3plyr_a"] == "negative":
+        show se 2 at t11
+        s "으으.. 나중은 벚꽃 다 질 텐데..." #sad
+        show se 3 at t11
+        s "그럼 내년에 가지 뭐. 수능도 다 끝나고 대학생일테니까, 시간도 많...지 않으려나." #smile
+        s "아무튼! 나는 먼저 교실 들어가볼게." #smile
+        hide se
+        "이상하다. 평소 같은 모습인데 미묘하게 서은이의 표정이 슬퍼보였다."
+        "하지만 곧 수업 시간이다. 생각을 그만두고 교실로 돌아가야 한다."
+        "괜찮을 거야. 항상 바보처럼 밝은 애니까. 그런 애니까."
+    
 
-label ch04_nob
-[N] 항상 느끼는 거지만
-[N] 수업 시간은 너무.. 졸리다..
-[N] 그나저나 B가 하려던 이야기는 뭐였을까?
-[N] 시답지 않은 이야기였겠지. 잠이나 자자.
 
-label ch05_main
-[A] “…야.”
-[N] 서은이다. 표정이 많이 어두워 보인다.
-[A] “나한테, 물어볼 것 없어?”
-[I] 긍정 – “있어.” (화난/슬픈, 평이) 부정 – “없어.” (화난/슬픈, 평이)
-[A] 
-긍정 평이 – “그 소문에 관한 것이지?”
-부정 평이 – 들었을 것 아냐. 내가 너에 대해서 이상한 소문을 퍼트리고 다닌다는 거.
-긍정/부정 화난/슬픈 – 너, 그 말들을 믿는구나? 그래서 화가 난거지?
-[I] 긍정 - “(answer)” 부정 - “(answer)”
-[A] 긍정 – “내가 정말 그랬을 거라고 생각하는 거야? 그런 바보 같은 소문을 믿는 너도 참 병신이다.
-부정 – “또 거짓말. 결국 너도 나를 못 믿잖아. 못 믿으니까 그런 반응인 것 아냐? 3년 동안이나 같이 지내면서 어떻게 나에 대해서 그렇게 한치도 모를 수가 있어?”
-긍정 평이 후 부정일 경우 – “뭐가 궁금한데?” -> “그럼 소문에 대한 건 하나도 듣지 못했어?” -> “3학년 내에 소문이 그렇게 퍼졌는데 너만 모른다고? 거짓말하지마.” -> 긍정, 부정
-[I] 감정적인 대답(추후에 대화 알고리즘 짤 때 자세하게 적을게요 살려주세요. 예상 답안이 너무 많아요.) - 그 말을 믿는 경우와 믿지 않는 경우로 나뉨
-[A] 싸우자싸ㅣ워 – 말을 믿는 경우의 반응(더욱더 감정적)과 믿지 않는 경우의 반응(누그러짐)으로 나뉨
-[I] 히힣ㅎ ㅣ싸운다 싸워 – 믿지 않는 경우, 서은이를 누그러뜨리고 믿는다는 것을 확실히 보여줘야 함.
-[A] 또 싸우자 히힣히 – 서은이를 확실히 믿는 ‘나’에게 사과하고 마무리된다. 믿지 않는 경우, 서은이와의 벚꽃 약속이 무산되며 결국 자리를 박차고 나가게 된다.
 
-label ch06_main
-서은이와 화해한 경우에만 발생하는 이벤트
-[N] 나에게는 두 가지 선택만이 남았다.
-[N] 서은이와의 약속을 지킬 것인지, 나의 호기심 때문에 B를 만날 것인지.
-[선택 이벤트 발생]
+    
+label ch03_main:
+    scene ch03_bg
+    show hj 1 at t11
+    h "나랑 얘기 좀 해." #normal
+    "누군가가 갑자기 나를 불러 세운다. 옆 반의 효주였다. 나랑 친하지도 않은 애가, 갑자기?"
+    h "할 얘기가 있어. 들어줄 수 있어?" #normal
 
-label ch07_end
-[N] 2018년 봄, 레스토랑 앞..
-[N] 오늘은 고등학교 동창회다. 벌써 서른을 앞둔 나이에 고등학교 친구들을 다시 볼 생각하니 조금은 들뜬 마음이다.
-[N] 사실, 제일 궁금한 건 서은이였다. 3년을 붙어 다닌, 피곤하지만 밉지 않은 나의 친구.
-[N] 벌써부터 북적거리는 레스토랑 안은 친숙하면서도 낯선 사람들로 가득 차있다. 성인이 된다는 것에 막연한 불안함이 있던 열아홉은 하나도 없었다. 그때보다 부쩍 자라버린 어른들만 있을 뿐이었다. 기분이 묘했다.
-[N] 많은 친구들과 반갑게 인사를 하며 안부를 묻는 중에도 내 눈은 계속 서은이를 찾고 있었다. 하지만 보이지를 않는다. 이런 자리에 빠질 애가 아닐텐데.. 
-[B] “오랜만이네. 잘 지냈어?”
-[I] 적당히 긍정적인 반응 - “(answer)” 안부 묻기 - “(answer)” 부정적인 반응 - “(answer)”
-[B] 긍정적인 반응 – “그렇구나. 좋아 보이네.”
-안부 묻기 – “응 나도 잘 지냈어. 얼마 전에 겨우 취직했거든. 이제 좀 살 맛 나지.”
-부정적인 반응 – “오랜만에 본 사인데 너무한 것 아냐?”
-[N] B라면 서은이의 행방을 알고 있을지도 모른다. 물어보자.
-[I] “서은이 어디 있는지 알아?”
-[B] “…농담하는 거지?”
-[I] 이유 묻기 - “(answer)” 긍정 - “(answer)” 부정 - “(answer)”
-[B] “장난치지마. 나 이런 장난 싫어해.”
-[N] B의 표정이 많이 불안해 보인다. 작은 질문으로 아이들의 술렁임이 느껴진다. 대체, 왜? 
+    call qus("ch03_1plyr")
 
-label ch08_bad_rev
-[B] “정말 기억 안나? 서은이는”
-[B] “서은이는 죽었잖아. 10년 전 오늘. 학교에서.”
-[N] 정신이 멍해진다. 서은이가 죽었다고?
-[B] “교통사고였어. 정말로 기억이 안나? 너 오늘 좀 이상하다.”
-[N] 서은이가 죽었다고? 대체 왜?
-[N] 멍해진 정신이 좀 더 흐릿해진다. 눈 앞이 아득하다. 몸이 기울어진다.
-[B] “…야! 정신차려!!”
-[N] 기억이 어긋난 것처럼 아파온다. 억지로 들어낸 것처럼 지운 자국이 선명하다. 
-[N] 서은이가 그랬을 리 없다. 서은이가 죽었을 리 없다. 혼란스럽다. 그 때였다.
-[???] “당신이 과거에 했을 작은 선택으로 모든 것을 바꿀 수 있다면?”
-[N] 칠흑 같은 어둠 속에서 의문의 목소리가 들려온다.
-[???] “그 선택으로 소중한 사람을 살릴 수 있다면?”
-[N] 서은이를 살릴 수 있을까? 하지만, 이미 10년 전에 죽은 아이를 어떻게?
-[???] “잘 생각해봐. 그 날의 너를.”
-[N] 수수께끼 같은 말과 함께 다시 나는 끝없는 어둠 속으로 추락했다.
-[N] 아래로.. 아래로.. 아래로..
-(다시 시작, 프로파일 힌트가 주어진다.)
+    if dic["ch03_1plyr"] == "positive":
+        show hj 2 at t11
+        h "서은이에 대한 건데..." #sad
+    elif dic["ch03_1plyr"] == "negative":
+        show hj 2 at t11
+        h "서은이에 관한 이야기야. 들어줬으면 좋겠어." #sad
+
+
+    "참, 볼수록 서은이와 정반대되는 성격이다. 무뚝뚝하고, 조용한 말투. 얘기를 들을까?"
+
+    call qus("ch03_2plyr")
+
+    if dic["ch03_2plyr"] == "positive":
+        show hj 1 at t11
+        h "서은이에게 이야기하지 않을 거지?" #normal
+
+        call qus("ch03_3plyr")
+
+        if dic["ch03_3plyr"] == "answer":
+            show hj 1 at t11
+            h "그래, 그건 네가 선택할 일이니까." #normal
+            show hj 2 at t11
+            h "아무튼, 서은이가 너에 대해서 좋지 않은 소문을 퍼뜨리고 다녀." #sad
+    
+        call qus("ch03_4plyr")
+
+        if dic["ch03_4plyr"] == "normal":
+            show hj 2 at t11
+            h "그게..." #sad
+        elif dic["ch03_4plyr"] == "sad":
+            show hj 2 at t11
+            h "울지는 마. 뭐라고 했었냐면," #sad
+        elif dic["ch03_4plyr"] == "anger":
+            show hj 4 at t11
+            h "목소리 좀 낮춰줘. 애들이 다 듣겠다. 아무튼," #anger
+    
+
+        show hj 1 at t11
+        "네가 이 사람 저 사람 찔러보고 다닌다고도 했고, 사람을 계획적으로 이용한다고 했어." #normal
+        "나도 지나가다가 들은 거라 정확하진 않은데, 네가 알아야 할 것 같아 말하는 거야." #normal
+
+        call qus("ch03_5plyr")
+
+        if dic["ch03_5plyr"] == "why":
+            show hj 1 at t11
+            h "그냥, 서은이가 어떤 아이인지 알길 바랐어. 너네 3년 내내 붙어다녔잖아." #normal
+        elif dic["ch03_5plyr"] == "lie":
+            show hj 1 at t11
+            h "믿든 말든 그건 네 자유긴 해. 하지만 적어도 3학년 내에서는 소문이 쫙 돌았어. 잘 판단하길 바랄게." #normal
+        elif dic["ch03_5plyr"] == "sad":
+            show hj 2 at t11
+            h "어... 충격 받은 건 알겠지만 정신 똑바로 차리길 바라. 지금도 소문은 돌고 있어." #sad
+        elif dic["ch03_5plyr"] == "anger":
+            show hj 4 at t11
+            h "제발, 나한테 화내지 말아줘. 나도 그저 들었을 뿐이라구." #surprise
+            
+            
+    elif dic["ch03_2plyr"] == "negative":
+        show hj 1 at t11
+        h "완고하네. 알겠어. 다만, 어떤 소문이 돌아도 듣지마." #normal
+
+
+    show hj 3 at t11 
+    h "아무튼, 좀 더 자세히 듣고 싶다면 학교 끝나고 나를 찾아오기를 바라." #smile
+    hide hj
+    "대답도 듣지 않은 채 효주는 자기 교실로 급하게 들어가버렸다. 나도 일단 교실로 돌아가야겠다."
+
+    if ch03_sel == "want":
+        call ch04_1_main
+    else:
+        call ch04_2_main
+
+    return
+
+
+label ch04_1_main:
+    scene ch04_1_bg
+    "수업 내용이 전혀 귀에 들어오지 않았다."
+    "사실일까? 서은이가 정말로 그랬을까? 아냐, 그럴 리가 없어."
+    "사실이라면, 왜 그랬을까? 3년 동안 대체 나는 서은이와 무슨 사이였던 걸까?"
+    "친구? 애초에 친구였던 걸까?"
+    "아니다. 섣부른 판단은 금물이다. 당사자와 이야기를 나눠 봐야 한다."
+    "하지만 진실이 두렵다. 나는 어떻게 해야 할까."
+    return
+
+
+
+label ch04_2_main:
+    scene ch04_2_bg
+    "항상 느끼는 거지만"
+    "수업 시간은 너무..."
+    "졸려."
+    "그나저나 효주가 하려던 이야기는 뭐였을까?"
+    "시답잖은 이야기였겠지. 잠이나 자자."
+    return
+
+
+
+label ch05_main:
+    scene ch05_bg
+    show se 2 at t11
+    s "...야." 
+    "서은이다. 표정이 많이 어두워 보인다."
+    show se 1 at t11
+    s "나한테 물어볼 거 없어?" #normal
+
+    call qus("ch05_1plyr")
+
+    if dic["ch05_1plyr"] == "positive_normal":
+        show se 2 at t11
+        s "그 소문에 관한 거지?" #sad
+    elif dic["ch05_1plyr"] == "negative_normal":
+        show se 2 at t11
+        s "들었을 거 아냐. 내가 너에 관한 이상한 소문들을 퍼뜨리고 다닌다는 말." #sad
+    elif dic["ch05_1plyr"] == "anger_sad":
+        show se 2 at t11
+        s "너, 그 소문들 믿는구나? 그래서 화가 난 거지?" #sad
+    
+    call qus("ch05_2plyr")
+
+    if dic["ch05_2plyr"] == "positive":
+        show se 5 at t11
+        s "내가 정말 그랬을 거라고 생각하는 거야? 그런 바보 같은 소문을 믿는 너도 멍청이다." #anger
+    elif dic["ch05_2plyr"] == "negative":
+        show se 5 at t11
+        s "거짓말. 결국 너도 날 못 믿네. 못 믿으니까 그런 반응인 것 아냐?" #anger
+        s "3년 동안이나 같이 지내왔으면서 어떻게 나에 대해 그렇게 한 치도 모를 수 있어?" #anger
+    
+    call qus("ch05_3plyr")
+
+    if dic["ch05_3plyr"] == "anger":
+        show se 5 at t11
+        s "이것 봐. 무턱대고 화부터 내잖아. 내 친구면 내 얘기를 먼저 들어줘야 하는 거 아냐?" #anger
+        show se 2 at t11
+        s "진짜 실망이야." #sad
+
+        call qus("ch05_3plyr_a")
+    
+        if dic["ch05_3plyr_a"] == "anger":
+            show se 5 at t11
+            s "있지, 소문 낸 애들, 그리고 그걸 믿는 다른 애들보다" #anger
+            s "네가 세상에서 제일 나빠." #anger
+            show se 2 at t11
+            s "약속은 없던 걸로 하자. 갈게." #sad
+        elif dic["ch05_3plyr_a"] == "apologize":
+            show se 2 at t11
+            s "이미 늦었어. 나는 그래도 너만은 날 믿어주길 바랐어." #sad
+            
+            call qus("ch05_3plyr_a_a")
+
+            if dic["ch05_3plyr_a_a"] == "apologize":
+                show se 2 at t11
+                s "...휴..." #sad
+                show se 1 at t11
+                s "아무튼, 난 안 그랬어. 정말이야. 그렇게도 날 모르냐." #normal
+                show se 3 at t11
+                s "다음부터는 내 얘기부터 먼저 들어줘. 양쪽 얘기를 다 듣고 나서 판단해도 괜찮잖아." #smile
+                s "...나도 무턱대고 화내서 미안해. 일단 갈게, 수업 시작한다. 좀 있다 보자." #smile
+            elif dic["ch05_3plyr_a_a"] == "anger":
+                show se 5 at t11
+                s "됐다. 그만하자." #anger
+                hide se
+                s "오늘 약속은 없던 걸로 해. 먼저 간다." #anger
+
+
+    elif dic["ch05_3plyr"] == "believe":
+        show se 1 at t11
+        s "정말로? 내가 그러지 않았다는 것을 믿어? 확신할 수 있어?" #normal
+
+        call qus("ch05_3plyr_b")
+
+        if dic["ch05_3plyr_b"] == "believe":
+            show se 2 at t11
+            s "...그렇구나." #sad
+            s "그래, 네가 아무것도 묻지 않고서 날 의심할 리가 없는데..." #sad
+            show se 1 at t11
+            s "미안. 나도 너무 화가 나서 괜히 너한테 화풀이한 것 같아." #normal
+            show se 3 at t11
+            s "하하.. 괜히 어색해지네. 진짜 미안해." #smile
+            s "조금 있다 벚꽃 보러갈 때 다시 얘기하자. 나도 조금 진정할 시간이 필요할 것 같아." #smile
+
+            call qus("ch05_3plyr_b_a")
+
+            if dic["ch05_3plyr_b_a"] == "worry":
+                show se 3 at t11
+                s "걱정해줘서 고마워. 그런데 네가 믿어준다니까 다 괜찮아졌어! 정말로." #smile
+                s "조금 있다가 봐!" #smile
+                hide se
+            elif dic["ch05_3plyr_b_a"] == "positive":
+                show se 3 at t11
+                s "응, 조금 있다가 보자! 오늘 벚꽃 보러가기로 했으니까." #smile
+                hide se
+
+        elif dic["ch05_3plyr_b"] == "notbelieve":
+            show se 5 at t11
+            s "장난치는 거야?" #anger
+            s "나는 진지하게 들어주길 바랐어." #anger
+            show se 2 at t11
+            s "정말 다른 아이들은 몰라도 너만은 내 이야기를 진심으로 들어줄 줄 알았는데." #sad
+            show se 5 at t11
+            s "갈게. 오늘은.. 그냥 일찍 집에 갈게." #anger
+            hide se
+
+    elif dic["ch05_3plyr"] == "explain":
+        show se 4 at t11
+        s "설명할 것도 없이, 난 애초에 안 그랬어. 내가.." #surpirse
+        show se 2 at t11
+        s "내가 널 얼마나 소중히 여기는데! 알잖아!" #sad
+    
+        call qus("ch05_3plyr_c")
+
+        if dic["ch05_3plyr_c"] == "agree":
+            show se 5 at t11
+            s "뭘 알아 또!" #anger
+            show se 2 at t11
+            s "휴..." #sad
+            show se 1 at t11
+            s "...미안해." #normal
+            s "괜히 화가 나서 너한테 뭐라고 한 것 같다." #normal
+            show se 3 at t11
+            s "아무튼 수업 시작하니까 조금 있다가 봐. 약속 안 잊었지?" #smile
+            s "그 때 더 얘기하자. 조금 있다가 봐." #smile
+            hide se
+
+        elif dic["ch05_3plyr_c"] == "disagree":
+            show se 5 at t11
+            s "장난치지 마, 진짜." #anger
+            show se 2 at t11
+            s "부끄러움을 무릅쓰고 말하는 거야." #sad
+            show se 1 at t11
+            s "난 절대로 너에 대해서 그렇게 말한 적 없어. 믿어줄래?" #normal
+
+            call qus("ch05_3plyr_c_a")
+
+            if dic["ch05_3plyr_c_a"] == "believe":
+                show se 3 at t11
+                s "그래, 고마워." #smile
+                s "진심이야." #smile
+                s "수업 시작하니까 이만 가 볼게. 화내지 않고, 몰아세우지 않고 들어줘서 고맙다." #smile
+                hide se
+            elif dic["ch05_3plyr_c_a"] == "notbelieve":
+                show se 2 at t11
+                s "......진짜 너무한다, 너." #sad
+                s "됐어, 갈게." #sad
+                s "벚꽃은 나중에 보러 가자." #sad
+                hide se
+
+
+    elif dic["ch05_3plyr"] == "apologize":
+        show se 5 at t11
+        s "뭐가 미안한데. 정말로 날 안 믿은 거야?" #anger
+        
+        call qus("ch05_3plyr_d")
+
+        if dic["ch05_3plyr_d"] == "believe":
+            show se 5 at t11
+            s "장난치는 거야?" #anger
+            s "나는 진지하게 들어주길 바랐어." #anger
+            show se 2 at t11
+            s "정말 다른 아이들은 몰라도 너만은 내 이야기를 진심으로 들어줄 줄 알았는데." #sad
+            show se 5 at t11
+            s "갈게. 오늘은.. 그냥 일찍 집에 갈게." #anger
+            hide se
+        elif dic["ch05_3plyr_d"] == "notbelieve":
+            show se 5 at t11
+            s "있지, 소문 낸 애들, 그리고 그걸 믿는 다른 애들보다" #anger
+            s "네가 세상에서 제일 나빠." #anger
+            show se 2 at t11
+            s "약속은 없던 걸로 하자. 갈게." #sad
+
+    return
+    
+label ch06_main:
+    scene ch06_bg
+    "나한테는 두 가지 선택만이 남았다."
+    "서은이와의 약속을 지킬 건지, 효주를 만나 내 호기심을 해소할 것인지."
+    
+    call qus("ch06_1plyr")
+
+    if dic["ch06_1plyr"] == "seoeun":
+        "그래, 서은이를 만나러 가자."
+    if dic["ch06_1plyr"] == "hyoju":
+        "중요한 이야기일지도 몰라. 벚꽃은 나중에 보더라도 효주의 이야기를 먼저 듣자."
+    return
+
+
+
+label ch07_main:
+    scene present_day
+    "2018년 봄, 레스토랑 앞."
+    "오늘은 고등학교 동창회다. 어느덧 서른을 앞둔 나이에 고등학교 친구들을 다시 볼 생각을 하니 조금 들뜬 마음이다."
+    "사실, 제일 궁금한 건 서은이였다. 3년을 붙어 다닌, 피곤하지만 밉지 않은 내 친구."
+    "벌써부터 북적거리는 레스토랑 안은 친숙하면서도 낯선 사람들로 가득 차 있다."
+    "성인이 된다는 것에 막연한 불안함이 있던 열아홉은 한 명도 없었다."
+    "그때보다 부쩍 자라버린 어른들만 있을 뿐이었다. 기분이 묘했다."
+    "친구들과 반갑게 인사를 하며 안부를 묻는 중에도 내 눈은 계속 서은이를 찾고 있었다."
+    "하지만 보이지 않는다. 이런 자리에 빠질 애가 아닌데..."
+    show hj 1 at t11
+    h "오랜만이네. 잘 지냈어?" #normal
+
+    call qus("ch07_1plyr")
+
+    if dic["ch07_1plyr"] == "positive":
+        show hj 3 at t11
+        h "그렇구나. 좋아 보이네." #smile
+    elif dic["ch07_1plyr"] == "negative":
+        show hj 3 at t11
+        h "뭐... 그래, 힘내." #smile
+    elif dic["ch07_1plyr"] == "ask":
+        show hj 3 at t11
+        h "응, 잘 지냈지. 얼마 전에 겨우 취직했거든. 이제 좀 살 맛 나더라." #smile
+    
+
+    "효주라면 서은이의 행방을 알고 있을지도 모른다. 물어보자."
+    "서은이 어디 있는지 알아?"
+    h "...농담하는 거지?"
+
+    call qus("ch07_2plyr")
+
+    if dic["ch07_2plyr"] == "answer":
+        show hj 5 at t11
+        h "장난치지 마. 나 이런 장난 싫어해." #anger
+    
+    "효주의 표정이 많이 불안해 보인다. 그냥 단순한 질문인데 주위의 술렁임이 느껴진다. 대체 왜?"
+
+    if dic["ch02_3plyr_b"] == "positive" and (dic["ch03_2plyr"] == "negative" or dic["ch03_5plyr"] == "lie") and dic["ch05_3plyr_a_a"] == "apologize" and dic["ch05_2plyr_b"] == "believe" and dic["ch05_3plyr_b_a"] == "worry" and dic["ch05_3plyr_c"] == "agree" and dic["ch05_3plyr_c_a"] == "believe" and dic["ch06_1plyr"] == "seoeun":
+        $ _end = "good"
+    else:
+        $ _end = "bad"
+    
+    if _end == "good":
+        call ch07_1_main
+    else:
+        call ch07_2_main
+    return
+
+
+label ch07_1_main:
+    scene present_day
+    show hj 1 at t11
+    h "정말 기억 안 나? 서은이는..." #normal
+    show hj 2 at t11
+    h "서은이는 죽었잖아. 10년 전 오늘, 학교에서." #sad
+    "정신이 멍해진다. 서은이가 죽었다고?"
+    show hj 1 at t11
+    h "교통사고. 정말 기억 안 나? 너 오늘 좀 이상하다." #normal
+    "서은이가 죽었다고? 대체 왜?"
+    "멍해진 정신이 좀 더 흐릿해진다. 눈 앞이 아득하다. 몸이 기울어진다."
+    show hj 4 at t11
+    h "...야! 정신차려!!" #surprise
+    "기억이 어긋난 것처럼 아파온다. 억지로 들어낸 것처럼 지운 자국이 선명하다."
+    scene black_bg
+    "서은이가 그랬을 리 없다. 서은이가 죽었을 리 없다. 혼란스럽다. 그 때였다."
+    d "당신이 과거에 했을 작은 선택으로 모든 것을 바꿀 수 있다면?"
+    "칠흑 같은 어둠 속에서 의문의 목소리가 들려온다."
+    d "그 선택으로 당신의 소중한 사람을 살릴 수 있다면?"
+    "서은이를 살릴 수 있다고? 하지만, 이미 10년 전에 죽은 아이를 어떻게?"
+    d "잘 생각해봐. 그 날의 너를."
+    "수수께끼 같은 말과 함께, 나는 다시 끝없는 어둠 속으로 추락했다."
+    "아래로... 아래로... 아래로..."
+
+    return
+
+
+
+label ch07_2_main:
+    scene present_day
+    show se 3 at t11
+    s "나를 왜 걔한테 물어봐." #smile
+    "이 목소리는..."
+    s "왜 그렇게 쳐다 봐? 죽은 사람 돌아온 것처럼. 오랜만이네?" #smile
+    "오랜만에 만난 서은이는 10년 전처럼 장난끼 넘쳤고, 기운찼다."
+    show se 1 at t11
+    s "밥이나 먹자. 배고파." #normal
+
+    call qus("ch07_2_1plyr")
+
+    if dic["ch07_2_1plyr"] == "positive":
+        show se 3 at t11
+        s "그럼 빨리 일어나. 너 때문에 밥 먹을 시간이 줄고 있잖아." #smile
+    elif dic["ch07_2_1plyr"] == "negative":
+        show se 3 at t11
+        s "빨리 나와라. 음식 다 떨어지기 전에." #smile
+    elif dic["ch07_2_1plyr"] == "nonsense":
+        show se 1 at t11
+        s "갑자기 무슨 헛소리야? 빨리 나오기나 해. 나 배고프다니까." #normal
+
+    call qus("ch07_2_2plyr")
+
+    if dic["ch07_2_2plyr"] == "normal":
+        show se 3 at t11
+        "가자가자!!" #smile
+    elif dic["ch07_2_2plyr"] == "joy":
+        show se 2 at t11
+        s "......너 이상해." #sad
+    elif dic["ch07_2_2plyr"] == "sad":
+        show se 5 at t11
+        s "안돼. 빨리 나와, 빨리!!!" #anger
+    elif dic["ch07_2_2plyr"] == "anger":
+        show se 3 at t11
+        s "새삼스럽게 왜 화내. 익숙해질 때도 됐잖아. 아, 오랜만이라 적응이 안 되나?" #smile
+
+
+    "전에도 비슷한 대화를 한 것 같은데, 기분이 묘하다."
+    show se 3 at t11
+    s "무슨 생각을 그렇게 해. 얼른 일어나라니까! 가자!" #smile
+    "10년이나 지났음에도 우리는 변함없이 티격태격했고 철이 없었다."
+    "이상하다. 제멋대로인 서은이의 모습에 짜증이 나면서도 왠지 모를 안도감이 찾아온다."
+    "그리웠었다. 다시는 못 볼 사이였던 것처럼."
+    "하지만 서은이는 지금 여기 있다."
+    "여전히, 그 날처럼."
+    
+    return
+
+label ch10_main:
+    scene cr1_day
+    "이상하다."
+    "엄청 생생한 꿈을 꾼 것 같은데..."
+    "무언가 소중한 것을 잃어버린 듯한 느낌이 들었다."
+    call nd2_start
+    return

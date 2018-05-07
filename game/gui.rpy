@@ -13,6 +13,9 @@ init python:
 
 
 default gui.direction = 0.25
+define gui.text_width = 744
+define gui.text_xalign = 0.0
+define gui.button_text_xalign = 0.0
 
 ################################################################################
 ## GUI Configuration Variables
@@ -23,7 +26,7 @@ default gui.direction = 0.25
 ##
 ## The colors of text in the interface.
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = '#cc0066'
+define gui.accent_color = '#333333'
 
 ## The color used for a text button when it is neither selected nor hovered.
 define gui.idle_color = '#aaaaaa'
@@ -55,19 +58,19 @@ define gui.interface_text_color = '#404040'
 ## Fonts and Font Sizes ########################################################
 
 ## The font used for in-game text.
-define gui.text_font = "NanumPen.ttf"
+define gui.text_font = "NotoSerifCJKkr-SemiBold.otf"
 
 ## The font used for character names.
-define gui.name_text_font = "NanumPen.ttf"
+define gui.name_text_font = "NotoSerifCJKkr-SemiBold.otf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "NanumPen.ttf"
+define gui.interface_text_font = "NotoSerifCJKkr-SemiBold.otf"
 
 ## The size of normal dialogue text.
-define gui.text_size = 40
+define gui.text_size = 30
 
 ## The size of character names.
-define gui.name_text_size = 45
+define gui.name_text_size = 40
 
 ## The size of text in the game's user interface.
 define gui.interface_text_size = 33
@@ -104,8 +107,8 @@ define gui.textbox_yalign = 1.0
 
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
-define gui.name_xpos = gui.direction
-define gui.name_ypos = 0
+define gui.name_xpos = gui.direction-0.2
+define gui.name_ypos = -0.11
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -113,8 +116,8 @@ define gui.name_xalign = 0.5
 
 ## The width, height, and borders of the box containing the character's name, or
 ## None to automatically size it.
-define gui.namebox_width = 400
-define gui.namebox_height = None
+define gui.namebox_width = 230
+define gui.namebox_height = 80
 
 ## The borders of the box containing the character's name, in left, top, right,
 ## bottom order.

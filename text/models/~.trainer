@@ -1,0 +1,11 @@
+<?xml version="1.0" ?><trainer ssi-v="5">
+    <info seed="1234" trained="false"/>
+	<register>
+		<item name="liblinear"/>		
+	</register>	
+    <samples balance="under" n_streams="1"><item path="C:\Users\boa65\Downloads\2dTest_Student\re-late\text\data\combined\anger.compare.samples"/><item path="C:\Users\boa65\Downloads\2dTest_Student\re-late\text\data\combined\boredom.compare.samples"/><item path="C:\Users\boa65\Downloads\2dTest_Student\re-late\text\data\combined\disgust.compare.samples"/><item path="C:\Users\boa65\Downloads\2dTest_Student\re-late\text\data\combined\fear.compare.samples"/><item path="C:\Users\boa65\Downloads\2dTest_Student\re-late\text\data\combined\happiness.compare.samples"/><item path="C:\Users\boa65\Downloads\2dTest_Student\re-late\text\data\combined\neutral.compare.samples"/><item path="C:\Users\boa65\Downloads\2dTest_Student\re-late\text\data\combined\sadness.compare.samples"/></samples>		    
+    <normalize>
+        <item method="Scale" stream="0"/>
+    </normalize>
+    <model create="LibLinear" option="linsvm" stream="0"/>
+</trainer>

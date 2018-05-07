@@ -1,0 +1,12 @@
+audio:live = true	    								# $(bool) use live input from a microphone
+audio:rate = 16000										# sample rate in Hz (if live audio is used)
+audio:file = test4.wav  	     	            		# if not live input read in from this file
+audio:loop = false										# $(bool) loop audio file
+
+# classification
+
+model:chain = compare									# name of feature chain
+model:type  = linsvm									# name of classification model
+model:incremental = true								# turn on incremental recognition
+
+

@@ -1,40 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "renpy/common/00start.rpy", line 79, in _init_language
-    renpy.change_language(language)
-  File "game/screens.rpy", line 13, in <module>
-    font gui.default_font
-AttributeError: 'StoreModule' object has no attribute 'default_font'
+While running game code:
+  File "renpy/common/00start.rpy", line 226, in script call
+    call _splashscreen from _call_splashscreen_1
+  File "game/script.rpy", line 142, in script call
+    call ch03_main
+  File "game/script.rpy", line 303, in script
+    if dic["ch03_1plyr"] == "positive":
+  File "game/script.rpy", line 303, in <module>
+    if dic["ch03_1plyr"] == "positive":
+KeyError: u'ch03_1plyr'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "/Users/histedit/Downloads/renpy-6.99.14.3-sdk/renpy/bootstrap.py", line 306, in bootstrap
-    renpy.main.main()
-  File "/Users/histedit/Downloads/renpy-6.99.14.3-sdk/renpy/main.py", line 513, in main
-    run(restart)
-  File "/Users/histedit/Downloads/renpy-6.99.14.3-sdk/renpy/main.py", line 71, in run
-    renpy.translation.init_translation()
-  File "/Users/histedit/Downloads/renpy-6.99.14.3-sdk/renpy/translation/__init__.py", line 535, in init_translation
-    renpy.store._init_language()  # @UndefinedVariable
-  File "renpy/common/00start.rpy", line 79, in _init_language
-    renpy.change_language(language)
-  File "/Users/histedit/Downloads/renpy-6.99.14.3-sdk/renpy/translation/__init__.py", line 613, in change_language
-    new_change_language(tl, language)
-  File "/Users/histedit/Downloads/renpy-6.99.14.3-sdk/renpy/translation/__init__.py", line 583, in new_change_language
-    i.apply()
-  File "/Users/histedit/Downloads/renpy-6.99.14.3-sdk/renpy/ast.py", line 2393, in apply
-    value = renpy.python.py_eval(expr)
-  File "/Users/histedit/Downloads/renpy-6.99.14.3-sdk/renpy/python.py", line 1919, in py_eval
+  File "renpy/common/00start.rpy", line 226, in script call
+    call _splashscreen from _call_splashscreen_1
+  File "game/script.rpy", line 142, in script call
+    call ch03_main
+  File "game/script.rpy", line 303, in script
+    if dic["ch03_1plyr"] == "positive":
+  File "C:\Users\boa65\Downloads\renpy-6.99.14.3-sdk\renpy\ast.py", line 1729, in execute
+    if renpy.python.py_eval(condition):
+  File "C:\Users\boa65\Downloads\renpy-6.99.14.3-sdk\renpy\python.py", line 1919, in py_eval
     return py_eval_bytecode(code, globals, locals)
-  File "/Users/histedit/Downloads/renpy-6.99.14.3-sdk/renpy/python.py", line 1912, in py_eval_bytecode
+  File "C:\Users\boa65\Downloads\renpy-6.99.14.3-sdk\renpy\python.py", line 1912, in py_eval_bytecode
     return eval(bytecode, globals, locals)
-  File "game/screens.rpy", line 13, in <module>
-    font gui.default_font
-AttributeError: 'StoreModule' object has no attribute 'default_font'
+  File "game/script.rpy", line 303, in <module>
+    if dic["ch03_1plyr"] == "positive":
+KeyError: u'ch03_1plyr'
 
-Darwin-17.4.0-x86_64-i386-64bit
+Windows-8-6.2.9200
 Ren'Py 6.99.14.3.3347
 re-late 1.0
-Tue Apr 24 15:27:20 2018
+Mon May 07 23:04:55 2018

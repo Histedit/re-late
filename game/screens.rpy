@@ -5,6 +5,7 @@
 init offset = -1
 
 
+
 ################################################################################
 ## Styles
 ################################################################################
@@ -97,24 +98,28 @@ style frame:
 
 screen say(who, what):
     style_prefix "say"
-
     window:
         id "window"
 
-        if who is not None:
-
-            window:
-                id "namebox"
-                style "namebox"
-                text who id "who"
-
         text what id "what"
 
+        if who is not None:
+            window:
+                if who == "서은":
+                    style "namebox"
+                    text who id "who"
+                if who == "효주":
+                    style "namebox_p"
+                    text who id "who"
+                if who == "???":
+                    style "namebox_m"
+                    text who id "who"
+                    
 
-    ## If there's a side image, display it above the text. Do not display on the
-    ## phone variant - there's no room.
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
+    
+    use quick_menu
 
 
 ## Make the namebox available for styling through the Character object.
@@ -146,8 +151,28 @@ style namebox:
     ypos gui.name_ypos
     ysize gui.namebox_height
 
-    background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    background Frame("gui/yellow_nt.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
+
+style namebox_p:
+    xpos gui.name_xpos
+    xanchor gui.name_xalign
+    xsize gui.namebox_width
+    ypos gui.name_ypos
+    ysize gui.namebox_height
+
+    background Frame("gui/pink_nt.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    padding gui.namebox_borders.padding
+
+style namebox_m:
+    xpos gui.name_xpos
+    xanchor gui.name_xalign
+    xsize gui.namebox_width
+    ypos gui.name_ypos
+    ysize gui.namebox_height
+
+    background Frame("gui/mint_nt.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    padding gui.namebox_borders.padding    
 
 style say_label:
     properties gui.text_properties("name", accent=True)
@@ -157,6 +182,7 @@ style say_label:
 style say_dialogue:
     properties gui.text_properties("dialogue")
 
+    slow_cps 25
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos
@@ -172,29 +198,66 @@ style say_dialogue:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#input
 
+
+image input_caret:
+    Solid("#b59")
+    size (2,25) subpixel True
+    block:
+        linear 0.35 alpha 0
+        linear 0.35 alpha 1
+        repeat
+
 screen input(prompt):
     style_prefix "input"
 
     window:
 
-        vbox:
-            xalign gui.dialogue_text_xalign
-            xpos gui.dialogue_xpos
-            xsize gui.dialogue_width
-            ypos gui.dialogue_ypos
+        has vbox:
+            xpos gui.text_xpos
+            xanchor 0.5
+            ypos gui.text_ypos
 
-            text prompt style "input_prompt"
-            input id "input"
+        text prompt style "input_prompt"
+        input id "input"
+
 
 style input_prompt is default
 
 style input_prompt:
-    xalign gui.dialogue_text_xalign
-    properties gui.text_properties("input_prompt")
+    xmaximum gui.text_width
+    xalign gui.text_xalign
+    text_align gui.text_xalign
 
 style input:
-    xalign gui.dialogue_text_xalign
-    xmaximum gui.dialogue_width
+    caret "input_caret"
+    xmaximum gui.text_width
+    xalign 0.5
+    text_align 0.5
+
+
+##screen input(prompt):
+##    style_prefix "input"
+##
+##    window:
+##
+##        vbox:
+##            xalign gui.dialogue_text_xalign
+##            xpos gui.dialogue_xpos
+##            xsize gui.dialogue_width
+##            ypos gui.dialogue_ypos
+##
+##            text prompt style "input_prompt"
+##            input id "input"
+##
+##style input_prompt is default
+##
+##style input_prompt:
+##    xalign gui.dialogue_text_xalign
+##    properties gui.text_properties("input_prompt")
+##
+##style input:
+##    xalign gui.dialogue_text_xalign
+##    xmaximum gui.dialogue_width
 
 
 ## Choice screen ###############################################################
@@ -269,7 +332,7 @@ screen quick_menu():
 init python:
     config.overlay_screens.append("quick_menu")
 
-default quick_menu = True
+default quick_menu = False
 
 style quick_button is default
 style quick_button_text is button_text
@@ -291,7 +354,8 @@ style quick_button_text:
 ## to other menus, and to start the game.
 
 screen navigation():
-
+   
+     
     vbox:
         style_prefix "navigation"
 
@@ -301,37 +365,8 @@ screen navigation():
         spacing gui.navigation_spacing
 
         if main_menu:
-
+            
             textbutton _("Start") action Start()
-
-        else:
-
-            textbutton _("History") action ShowMenu("history")
-
-            textbutton _("저장하기") action ShowMenu("save")
-
-        textbutton _("Load") action ShowMenu("load")
-
-        textbutton _("환경 설정") action ShowMenu("preferences")
-
-        if _in_replay:
-
-            textbutton _("End Replay") action EndReplay(confirm=True)
-
-        elif not main_menu:
-
-            textbutton _("메인 메뉴") action MainMenu()
-
-        textbutton _("렌파이란") action ShowMenu("about")
-
-        if renpy.variant("pc"):
-
-            ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("도움말") action ShowMenu("help")
-
-            ## The quit button is banned on iOS and unnecessary on Android.
-            textbutton _("끝내기") action Quit(confirm=not main_menu)
-
 
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
@@ -357,17 +392,13 @@ screen main_menu():
 
     style_prefix "main_menu"
 
-    add gui.main_menu_background
-
-    ## This empty frame darkens the main menu.
     frame:
         pass
-
-    ## The use statement includes another screen inside this one. The actual
+    ## The use statement includes another reen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
     use navigation
 
-    if gui.show_name:
+    if gui.show_name == False:
 
         vbox:
             text "[config.name!t]":

@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<annotation ssi-v="3">
+    <info ftype="ASCII" size="69" />
+    <scheme name="" type="DISCRETE">
+        <item name="anger" id="0" />
+        <item name="boredom" id="1" />
+        <item name="disgust" id="2" />
+        <item name="fear" id="3" />
+        <item name="happiness" id="4" />
+        <item name="neutral" id="5" />
+        <item name="sadness" id="6" />
+    </scheme>
+</annotation>

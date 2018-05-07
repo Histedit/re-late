@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<stream ssi-v="2">
+    <info ftype="BINARY" sr="0.000000" dim="6373" byte="4" type="FLOAT" />
+    <meta />
+	<chunk from="0.090000" to="1.440000" byte="0" num="1"/>
+	<chunk from="2.700000" to="4.050000" byte="25492" num="1"/>
+	<chunk from="4.740000" to="6.090000" byte="50984" num="1"/>
+	<chunk from="8.790000" to="10.140000" byte="76476" num="1"/>
+	<chunk from="13.110000" to="14.460000" byte="101968" num="1"/>
+	<chunk from="17.850000" to="19.200000" byte="127460" num="1"/>
+	<chunk from="20.850000" to="22.200000" byte="152952" num="1"/>
+	<chunk from="23.940000" to="25.290000" byte="178444" num="1"/>
+	<chunk from="25.980000" to="27.330000" byte="203936" num="1"/>
+	<chunk from="28.620000" to="29.970000" byte="229428" num="1"/>
+	<chunk from="31.980000" to="33.330000" byte="254920" num="1"/>
+	<chunk from="34.980000" to="36.330000" byte="280412" num="1"/>
+	<chunk from="36.600000" to="37.950000" byte="305904" num="1"/>
+	<chunk from="39.060000" to="40.410000" byte="331396" num="1"/>
+	<chunk from="43.350000" to="44.700000" byte="356888" num="1"/>
+	<chunk from="47.160000" to="48.510000" byte="382380" num="1"/>
+	<chunk from="49.890000" to="51.240000" byte="407872" num="1"/>
+	<chunk from="52.710000" to="54.060000" byte="433364" num="1"/>
+	<chunk from="56.010000" to="57.360000" byte="458856" num="1"/>
+	<chunk from="59.100000" to="60.450000" byte="484348" num="1"/>
+	<chunk from="64.410000" to="65.760000" byte="509840" num="1"/>
+	<chunk from="68.460000" to="69.810000" byte="535332" num="1"/>
+	<chunk from="71.790000" to="73.140000" byte="560824" num="1"/>
+	<chunk from="74.010000" to="75.360000" byte="586316" num="1"/>
+	<chunk from="77.700000" to="79.050000" byte="611808" num="1"/>
+	<chunk from="81.570000" to="82.920000" byte="637300" num="1"/>
+	<chunk from="85.710000" to="87.060000" byte="662792" num="1"/>
+	<chunk from="89.250000" to="90.600000" byte="688284" num="1"/>
+	<chunk from="93.180000" to="94.530000" byte="713776" num="1"/>
+	<chunk from="97.620000" to="98.970000" byte="739268" num="1"/>
+	<chunk from="101.970000" to="103.320000" byte="764760" num="1"/>
+	<chunk from="107.970000" to="109.320000" byte="790252" num="1"/>
+	<chunk from="110.400000" to="111.750000" byte="815744" num="1"/>
+	<chunk from="113.100000" to="114.450000" byte="841236" num="1"/>
+	<chunk from="117.870000" to="119.220000" byte="866728" num="1"/>
+	<chunk from="121.380000" to="122.730000" byte="892220" num="1"/>
+	<chunk from="124.890000" to="126.240000" byte="917712" num="1"/>
+	<chunk from="129.900000" to="131.250000" byte="943204" num="1"/>
+	<chunk from="133.230000" to="134.580000" byte="968696" num="1"/>
+	<chunk from="137.250000" to="138.600000" byte="994188" num="1"/>
+	<chunk from="140.670000" to="142.020000" byte="1019680" num="1"/>
+	<chunk from="144.600000" to="145.950000" byte="1045172" num="1"/>
+	<chunk from="148.140000" to="149.490000" byte="1070664" num="1"/>
+	<chunk from="151.740000" to="153.090000" byte="1096156" num="1"/>
+	<chunk from="154.380000" to="155.730000" byte="1121648" num="1"/>
+	<chunk from="158.220000" to="159.570000" byte="1147140" num="1"/>
+	<chunk from="162.240000" to="163.590000" byte="1172632" num="1"/>
+	<chunk from="166.680000" to="168.030000" byte="1198124" num="1"/>
+	<chunk from="171.840000" to="173.190000" byte="1223616" num="1"/>
+	<chunk from="173.580000" to="174.930000" byte="1249108" num="1"/>
+	<chunk from="178.830000" to="180.180000" byte="1274600" num="1"/>
+	<chunk from="182.160000" to="183.510000" byte="1300092" num="1"/>
+	<chunk from="184.860000" to="186.210000" byte="1325584" num="1"/>
+</stream>
