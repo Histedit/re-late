@@ -108,12 +108,13 @@ screen say(who, what):
                 if who == "서은":
                     style "namebox"
                     text who id "who"
-                if who == "효주":
+                elif who == "효주":
                     style "namebox_p"
                     text who id "who"
-                if who == "???":
+                elif who == "???":
                     style "namebox_m"
                     text who id "who"
+                
                     
 
     if not renpy.variant("small"):
@@ -1354,6 +1355,34 @@ screen nvl(dialogue, items=None):
 
     add SideImage() xalign 0.0 yalign 1.0
 
+
+screen dialog(message, ok_action):
+
+
+    modal True
+
+    zorder 200
+
+    style_prefix "confirm"
+
+    add "gui/overlay/confirm.png"
+
+    frame:
+
+        has vbox:
+            xalign .25
+            yalign .25
+            spacing 30
+
+        label _(message):
+            style "confirm_prompt"
+            xalign 0.25
+
+        hbox:
+            xalign 0.25
+            spacing 100
+
+            textbutton _("OK") action ok_action
 
 screen nvl_dialogue(dialogue):
 

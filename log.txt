@@ -1,47 +1,48 @@
-Mon May 07 23:00:58 2018
+Wed May 30 03:16:10 2018
 Windows-8-6.2.9200
 Ren'Py 6.99.14.3.3347
  
 
 Bootstrap to the start of init.init took 0.06s
 Early init took 0.00s
-Loader init took 0.11s
-Loading error handling took 0.03s
-Loading script took 0.08s
+Loader init took 0.09s
+Loading error handling took 0.02s
+Loading script took 0.26s
 Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.19s
-Loading analysis data took 0.11s
+Running init code took 0.22s
+Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
-Dump and make backups. took 0.05s
+Backing up script files to 'C:\\Users\\boa65\\AppData\\Roaming/RenPy/backups\\re-late':
+Dump and make backups. took 0.06s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.02s
+Initial gc. took 0.01s
 DPI scale factor: 1.000000
-Creating interface object took 0.07s
+Creating interface object took 0.14s
 Cleaning stores took 0.00s
 Init translation took 0.02s
 Build styles took 0.00s
-Load screen analysis took 0.05s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.04s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.06s
+Prepare screens took 0.05s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Save bytecode. took 0.06s
 Running _start took 0.00s
 Performance test:
-Interface start took 0.03s
+Interface start took 0.02s
 
-primary display bounds: (0, 0, 3840, 1080)
+primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
 Fullscreen mode.
-Screen sizes: virtual=(3840, 1080) physical=(3840, 1080) drawable=(3840, 1080)
+Screen sizes: virtual=(3840, 1080) physical=(1920, 1080) drawable=(1920, 1080)
 Vendor: 'NVIDIA Corporation'
 Renderer: 'GeForce GTX 1080/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 391.35'
-Display Info: <Info({'blit_sw_CC': False, 'refresh_rate': 60, 'bitsize': 32, 'wm': True, 'losses': (0, 0, 0, 8), 'hw': False, 'masks': (16711680L, 65280L, 255L, 0L), 'current_h': 1080, 'current_w': 3840, 'shifts': (16, 8, 0, 0), 'blit_sw_A': False, 'blit_hw': False, 'blit_sw': False, 'bytesize': 4, 'blit_hw_CC': False, 'blit_hw_A': False, 'video_mem': 268435456})>
+Version: '4.6.0 NVIDIA 397.64'
+Display Info: <Info({'blit_sw_CC': False, 'refresh_rate': 144, 'bitsize': 32, 'wm': True, 'losses': (0, 0, 0, 8), 'hw': False, 'masks': (16711680L, 65280L, 255L, 0L), 'current_h': 1080, 'current_w': 1920, 'shifts': (16, 8, 0, 0), 'blit_sw_A': False, 'blit_hw': False, 'blit_sw': False, 'bytesize': 4, 'blit_hw_CC': False, 'blit_hw_A': False, 'video_mem': 268435456})>
 Fixed-function is blacklisted.
 Extensions:
     
@@ -339,6 +340,7 @@ Extensions:
     GL_NV_draw_texture
     GL_NV_draw_vulkan_image
     GL_NV_explicit_multisample
+    GL_NV_feature_query
     GL_NV_fence
     GL_NV_fill_rectangle
     GL_NV_float_buffer
@@ -432,39 +434,12 @@ Texture testing:
 - 512px textures work.
 - 1024px textures work.
 - 2048px textures work.
-Total time until interface ready: 1.31999993324s
+controller: '78696e70757401000000000000000000' 'XInput Controller' 1L
+Total time until interface ready: 1.8710000515s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.020667 seconds.
-- Frame drawn at 0.021667 seconds.
-- Frame drawn at 0.032667 seconds.
-- Frame drawn at 0.049667 seconds.
-- 0.049667 seconds to render 5 frames.
-
-Full traceback:
-  File "renpy/common/00start.rpy", line 226, in script call
-    call _splashscreen from _call_splashscreen_1
-  File "game/script.rpy", line 142, in script call
-    call ch03_main
-  File "game/script.rpy", line 303, in script
-    if dic["ch03_1plyr"] == "positive":
-  File "C:\Users\boa65\Downloads\renpy-6.99.14.3-sdk\renpy\ast.py", line 1729, in execute
-    if renpy.python.py_eval(condition):
-  File "C:\Users\boa65\Downloads\renpy-6.99.14.3-sdk\renpy\python.py", line 1919, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\boa65\Downloads\renpy-6.99.14.3-sdk\renpy\python.py", line 1912, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 303, in <module>
-    if dic["ch03_1plyr"] == "positive":
-KeyError: u'ch03_1plyr'
-
-While running game code:
-  File "renpy/common/00start.rpy", line 226, in script call
-    call _splashscreen from _call_splashscreen_1
-  File "game/script.rpy", line 142, in script call
-    call ch03_main
-  File "game/script.rpy", line 303, in script
-    if dic["ch03_1plyr"] == "positive":
-  File "game/script.rpy", line 303, in <module>
-    if dic["ch03_1plyr"] == "positive":
-KeyError: u'ch03_1plyr'
+- Frame drawn at 0.010944 seconds.
+- Frame drawn at 0.011944 seconds.
+- Frame drawn at 0.034944 seconds.
+- Frame drawn at 0.035944 seconds.
+- 0.035944 seconds to render 5 frames.

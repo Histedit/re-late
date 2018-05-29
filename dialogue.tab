@@ -1,0 +1,196 @@
+Identifier	Character	Dialogue	Filename	Line Number
+ch01_main_75bd90b6		2008년, 봄. XX고등학교.	game/script.rpy	192
+ch01_main_2b268fd9	s	…야.	game/script.rpy	193
+ch01_main_3863b72b		어디선가 목소리가 들린다.	game/script.rpy	194
+ch01_main_e6628e3f	s	야.	game/script.rpy	195
+ch01_main_cb4224cd		목소리가 꽤 또렷하게 들리지만 고개는 여전히 무겁다. 아직 일어나기 싫다.	game/script.rpy	196
+ch01_main_17af5792	s	일어나. 점심시간이야.	game/script.rpy	197
+ch01_main_ff6c4f44		몽롱한 정신으로 고개를 들어 보니 어느 여자아이가 서 있다.	game/script.rpy	201
+ch01_main_a56e183f	s	점심시간이라니까? 수업 중에 잠이나 자고. 아무튼 점심 먹으러 안 가?	game/script.rpy	203
+ch01_main_9cecd004	s	그럼 빨리 일어나. 너 때문에 밥 먹을 시간이 줄고 있잖아.	game/script.rpy	209
+ch01_main_57fcbe71	s	지금 가야 맛난 거 많이 먹을 수 있단 말이야. 빨리 나와.	game/script.rpy	212
+ch01_main_806c6f67	s	갑자기 무슨 헛소리야? 빨리 나오기나 해. 나 배고프다니까.	game/script.rpy	215
+ch01_main_58aba664		이럴거면 왜 물어본건지... 결국 잠이 덜 깬 몸을 일으켜 급식실로 향한다.	game/script.rpy	221
+ch01_main_dc0a1d24	s	......너 이상해.	game/script.rpy	224
+ch01_main_72903bc2		결국 잠이 덜 깬 몸을 일으켜 급식실로 향한다.	game/script.rpy	226
+ch01_main_c1276b4a	s	안돼. 빨리 나와, 빨리!!!	game/script.rpy	229
+ch01_main_72903bc2_1		결국 잠이 덜 깬 몸을 일으켜 급식실로 향한다.	game/script.rpy	231
+ch01_main_597842fc	s	새삼스럽게 왜 화내. 익숙해질 때도 됐잖아. 어서 가자.	game/script.rpy	234
+ch01_main_72903bc2_2		결국 잠이 덜 깬 몸을 일으켜 급식실로 향한다.	game/script.rpy	236
+ch02_main_9f2d35d0		이 아이의 이름은 서은. 당찬 성격인 아이라서 매번 나를 이런 식으로 질질 끌고 간다.	game/script.rpy	245
+ch02_main_4bd99da1		가끔 피곤하기는 하지만 밉지는 않은, 3년째 붙어 다니는 나의 친구다.	game/script.rpy	246
+ch02_main_9a5d925e	s	그나저나 날씨, 완전 따뜻해지지 않았어?	game/script.rpy	248
+ch02_main_9f3cd38d	s	그렇다니까. 벌써 부산 쪽은 벚꽃 다 펴서 이미 진다더라.	game/script.rpy	254
+ch02_main_82fd6147	s	이게? 원래 추위 많이 탔었나. 아무튼 약한 척은.	game/script.rpy	257
+ch02_main_784416ad	s	뭐라는 거야. 날씨가 따뜻해지지 않았냐고 물었잖아.	game/script.rpy	260
+ch02_main_e06ff3cc	s	꽃구경 간 지가 언젠지 모르겠어. 올해는 수능도 봐서 가기가 더 눈치 보인다니까.	game/script.rpy	263
+ch02_main_25a6b5ed	s	그런데 약간 올해라서 더 가고 싶은 것 같아. 일탈 같은 느낌이잖아.	game/script.rpy	265
+ch02_main_1d909fd9	s	앗, 그러면 나랑 같이 꽃구경 갈래? 나 혼자서 가면 죄책감 들 것 같단 말이야.	game/script.rpy	271
+ch02_main_74065cec	s	모범생인 척 좀 하지 마. 그런 김에 나랑 벚꽃 보러 가자. 나 혼자 가면 심심해.	game/script.rpy	274
+ch02_main_3d535a41	s	엥 너랑? 어...	game/script.rpy	277
+ch02_main_fadc1cdd	s	으음, 근데 나 오늘밖에 시간이 없는데 괜찮아? 오늘 학교 끝나고 바로!	game/script.rpy	283
+ch02_main_7eaf6abd	s	그럼 수업 다 끝나고 보자!	game/script.rpy	289
+ch02_main_2c314753		꽃구경 가는 것이 그렇게 기쁠 일인가. 방방 뛰면서 올라가는 서은이의 모습에 괜시리 웃음이 난다.	game/script.rpy	291
+ch02_main_dec3cb6e		나도 슬슬 일어나서 다시 교실로 돌아가도록 하자.	game/script.rpy	292
+ch02_main_0311c542	s	으으.. 나중은 벚꽃 다 질 텐데...	game/script.rpy	297
+ch02_main_152805a8	s	그럼 내년에 가지 뭐. 수능도 다 끝나고 대학생일테니까, 시간도 많...지 않으려나.	game/script.rpy	299
+ch02_main_e337ab7b	s	아무튼! 나는 먼저 교실 들어가볼게.	game/script.rpy	300
+ch02_main_4c6dbe74		이상하다. 평소와 같은 모습인데 미묘하게 서은이의 표정이 슬퍼보였다.	game/script.rpy	302
+ch02_main_56ed3c46		하지만 곧 수업 시간이다. 생각을 그만두고 교실로 돌아가야 한다.	game/script.rpy	303
+ch02_main_04f90017		괜찮을 거야. 항상 바보처럼 밝은 애니까. 그런 애니까.	game/script.rpy	304
+ch02_main_0311c542_1	s	으으.. 나중은 벚꽃 다 질 텐데...	game/script.rpy	309
+ch02_main_152805a8_1	s	그럼 내년에 가지 뭐. 수능도 다 끝나고 대학생일테니까, 시간도 많...지 않으려나.	game/script.rpy	311
+ch02_main_e337ab7b_1	s	아무튼! 나는 먼저 교실 들어가볼게.	game/script.rpy	312
+ch02_main_40a73045		이상하다. 평소 같은 모습인데 미묘하게 서은이의 표정이 슬퍼보였다.	game/script.rpy	314
+ch02_main_56ed3c46_1		하지만 곧 수업 시간이다. 생각을 그만두고 교실로 돌아가야 한다.	game/script.rpy	315
+ch02_main_04f90017_1		괜찮을 거야. 항상 바보처럼 밝은 애니까. 그런 애니까.	game/script.rpy	316
+ch03_main_c82cce1d	h	나랑 얘기 좀 해.	game/script.rpy	326
+ch03_main_551e22fe		누군가가 갑자기 나를 불러 세운다. 옆 반의 효주였다. 나랑 친하지도 않은 애가, 갑자기?	game/script.rpy	327
+ch03_main_566d4f14	h	할 얘기가 있어. 들어줄 수 있어?	game/script.rpy	328
+ch03_main_1bcdb75c	h	서은이에 대한 건데...	game/script.rpy	334
+ch03_main_f262709d	h	서은이에 관한 이야기야. 들어줬으면 좋겠어.	game/script.rpy	337
+ch03_main_c7971ea8		참, 볼수록 서은이와 정반대되는 성격이다. 무뚝뚝하고, 조용한 말투. 얘기를 들을까?	game/script.rpy	340
+ch03_main_3fa4875a	h	서은이에게 이야기하지 않을 거지?	game/script.rpy	346
+ch03_main_c1db4cfb	h	그래, 그건 네가 선택할 일이니까.	game/script.rpy	352
+ch03_main_55238f0e	h	아무튼, 서은이가 너에 대해서 좋지 않은 소문을 퍼뜨리고 다녀.	game/script.rpy	354
+ch03_main_0b100c86	h	그게...	game/script.rpy	360
+ch03_main_0ab0c40d	h	울지는 마. 뭐라고 했었냐면,	game/script.rpy	363
+ch03_main_72124c5c	h	목소리 좀 낮춰줘. 애들이 다 듣겠다. 아무튼,	game/script.rpy	366
+ch03_main_f123c380		네가 이 사람 저 사람 찔러보고 다닌다고도 했고, 사람을 계획적으로 이용한다고 했어.	game/script.rpy	370
+ch03_main_c8308ff6		나도 지나가다가 들은 거라 정확하진 않은데, 네가 알아야 할 것 같아 말하는 거야.	game/script.rpy	371
+ch03_main_fde21079	h	그냥, 서은이가 어떤 아이인지 알길 바랐어. 너네 3년 내내 붙어다녔잖아.	game/script.rpy	377
+ch03_main_88c0d0d4	h	믿든 말든 그건 네 자유긴 해. 하지만 적어도 3학년 내에서는 소문이 쫙 돌았어. 잘 판단하길 바랄게.	game/script.rpy	380
+ch03_main_d2672b58	h	어... 충격 받은 건 알겠지만 정신 똑바로 차리길 바라. 지금도 소문은 돌고 있어.	game/script.rpy	383
+ch03_main_d0b424ae	h	제발, 나한테 화내지 말아줘. 나도 그저 들었을 뿐이라구.	game/script.rpy	386
+ch03_main_8aa632d0	h	완고하네. 알겠어. 다만, 어떤 소문이 돌아도 듣지마.	game/script.rpy	391
+ch03_main_83dad7ff	h	아무튼, 좀 더 자세히 듣고 싶다면 학교 끝나고 나를 찾아오기를 바라.	game/script.rpy	395
+ch03_main_90f515e0		대답도 듣지 않은 채 효주는 자기 교실로 급하게 들어가버렸다. 나도 일단 교실로 돌아가야겠다.	game/script.rpy	397
+ch04_1_main_d8efca9d		수업 내용이 전혀 귀에 들어오지 않았다.	game/script.rpy	410
+ch04_1_main_447929d1		사실일까? 서은이가 정말로 그랬을까? 아냐, 그럴 리가 없어.	game/script.rpy	411
+ch04_1_main_da42445e		사실이라면, 왜 그랬을까? 3년 동안 대체 나는 서은이와 무슨 사이였던 걸까?	game/script.rpy	412
+ch04_1_main_040febb7		친구? 애초에 친구였던 걸까?	game/script.rpy	413
+ch04_1_main_c4864288		아니다. 섣부른 판단은 금물이다. 당사자와 이야기를 나눠 봐야 한다.	game/script.rpy	414
+ch04_1_main_5c251ca0		하지만 진실이 두렵다. 나는 어떻게 해야 할까.	game/script.rpy	415
+ch04_2_main_cba39ab8		항상 느끼는 거지만	game/script.rpy	423
+ch04_2_main_e09024eb		수업 시간은 너무...	game/script.rpy	424
+ch04_2_main_2fc07c16		졸려.	game/script.rpy	425
+ch04_2_main_97b61982		그나저나 효주가 하려던 이야기는 뭐였을까?	game/script.rpy	426
+ch04_2_main_7653b439		시답잖은 이야기였겠지. 잠이나 자자.	game/script.rpy	427
+ch05_main_7028022a	s	...야.	game/script.rpy	436
+ch05_main_72f8e303		서은이다. 표정이 많이 어두워 보인다.	game/script.rpy	437
+ch05_main_0742de1e	s	나한테 물어볼 거 없어?	game/script.rpy	439
+ch05_main_5a8689dc	s	그 소문에 관한 거지?	game/script.rpy	445
+ch05_main_2b8b4b77	s	들었을 거 아냐. 내가 너에 관한 이상한 소문들을 퍼뜨리고 다닌다는 말.	game/script.rpy	448
+ch05_main_a9326fb1	s	너, 그 소문들 믿는구나? 그래서 화가 난 거지?	game/script.rpy	451
+ch05_main_a34d8691	s	내가 정말 그랬을 거라고 생각하는 거야? 그런 바보 같은 소문을 믿는 너도 멍청이다.	game/script.rpy	457
+ch05_main_a9589c9c	s	거짓말. 결국 너도 날 못 믿네. 못 믿으니까 그런 반응인 것 아냐?	game/script.rpy	460
+ch05_main_73f984c9	s	3년 동안이나 같이 지내왔으면서 어떻게 나에 대해 그렇게 한 치도 모를 수 있어?	game/script.rpy	461
+ch05_main_282b988c	s	이것 봐. 무턱대고 화부터 내잖아. 내 친구면 내 얘기를 먼저 들어줘야 하는 거 아냐?	game/script.rpy	467
+ch05_main_a12901bd	s	진짜 실망이야.	game/script.rpy	469
+ch05_main_1c2faf13	s	있지, 소문 낸 애들, 그리고 그걸 믿는 다른 애들보다	game/script.rpy	475
+ch05_main_2bf16bb7	s	네가 세상에서 제일 나빠.	game/script.rpy	476
+ch05_main_82b776f9	s	약속은 없던 걸로 하자. 갈게.	game/script.rpy	478
+ch05_main_ebca2964	s	이미 늦었어. 나는 그래도 너만은 날 믿어주길 바랐어.	game/script.rpy	481
+ch05_main_c69d5283	s	...휴...	game/script.rpy	487
+ch05_main_ba965a59	s	아무튼, 난 안 그랬어. 정말이야. 그렇게도 날 모르냐.	game/script.rpy	489
+ch05_main_830fa6aa	s	다음부터는 내 얘기부터 먼저 들어줘. 양쪽 얘기를 다 듣고 나서 판단해도 괜찮잖아.	game/script.rpy	491
+ch05_main_127b4085	s	...나도 무턱대고 화내서 미안해. 일단 갈게, 수업 시작한다. 좀 있다 보자.	game/script.rpy	492
+ch05_main_633560ff	s	됐다. 그만하자.	game/script.rpy	495
+ch05_main_bd36971c	s	오늘 약속은 없던 걸로 해. 먼저 간다.	game/script.rpy	497
+ch05_main_6303e532	s	정말로? 내가 그러지 않았다는 것을 믿어? 확신할 수 있어?	game/script.rpy	502
+ch05_main_5b215530	s	...그렇구나.	game/script.rpy	508
+ch05_main_96696f1d	s	그래, 네가 아무것도 묻지 않고서 날 의심할 리가 없는데...	game/script.rpy	509
+ch05_main_366c6480	s	미안. 나도 너무 화가 나서 괜히 너한테 화풀이한 것 같아.	game/script.rpy	511
+ch05_main_31f0ea33	s	하하.. 괜히 어색해지네. 진짜 미안해.	game/script.rpy	513
+ch05_main_9ab866a0	s	조금 있다 벚꽃 보러갈 때 다시 얘기하자. 나도 조금 진정할 시간이 필요할 것 같아.	game/script.rpy	514
+ch05_main_b366c2be	s	걱정해줘서 고마워. 그런데 네가 믿어준다니까 다 괜찮아졌어! 정말로.	game/script.rpy	520
+ch05_main_bbb44f97	s	조금 있다가 봐!	game/script.rpy	521
+ch05_main_5b1ee611	s	응, 조금 있다가 보자! 오늘 벚꽃 보러가기로 했으니까.	game/script.rpy	525
+ch05_main_4b1a22e3	s	장난치는 거야?	game/script.rpy	530
+ch05_main_cdaed95b	s	나는 진지하게 들어주길 바랐어.	game/script.rpy	531
+ch05_main_b80e41e7	s	정말 다른 아이들은 몰라도 너만은 내 이야기를 진심으로 들어줄 줄 알았는데.	game/script.rpy	533
+ch05_main_73775cea	s	갈게. 오늘은.. 그냥 일찍 집에 갈게.	game/script.rpy	535
+ch05_main_598df2ec	s	설명할 것도 없이, 난 애초에 안 그랬어. 내가..	game/script.rpy	540
+ch05_main_8fb261dd	s	내가 널 얼마나 소중히 여기는데! 알잖아!	game/script.rpy	542
+ch05_main_a930ee98	s	뭘 알아 또!	game/script.rpy	548
+ch05_main_68f1c32e	s	휴...	game/script.rpy	550
+ch05_main_746a99d3	s	...미안해.	game/script.rpy	552
+ch05_main_dc2809d6	s	괜히 화가 나서 너한테 뭐라고 한 것 같다.	game/script.rpy	553
+ch05_main_06063678	s	아무튼 수업 시작하니까 조금 있다가 봐. 약속 안 잊었지?	game/script.rpy	555
+ch05_main_d488f37f	s	그 때 더 얘기하자. 조금 있다가 봐.	game/script.rpy	556
+ch05_main_9ba366bd	s	장난치지 마, 진짜.	game/script.rpy	561
+ch05_main_60efd62f	s	부끄러움을 무릅쓰고 말하는 거야.	game/script.rpy	563
+ch05_main_1ebc9baf	s	난 절대로 너에 대해서 그렇게 말한 적 없어. 믿어줄래?	game/script.rpy	565
+ch05_main_e59d73b2	s	그래, 고마워.	game/script.rpy	571
+ch05_main_00f72762	s	진심이야.	game/script.rpy	572
+ch05_main_0a33d28a	s	수업 시작하니까 이만 가 볼게. 화내지 않고, 몰아세우지 않고 들어줘서 고맙다.	game/script.rpy	573
+ch05_main_38b0687b	s	......진짜 너무한다, 너.	game/script.rpy	577
+ch05_main_a49d6ceb	s	됐어, 갈게.	game/script.rpy	578
+ch05_main_165cdf6e	s	벚꽃은 나중에 보러 가자.	game/script.rpy	579
+ch05_main_5414cd5f	s	뭐가 미안한데. 정말로 날 안 믿은 거야?	game/script.rpy	585
+ch05_main_4b1a22e3_1	s	장난치는 거야?	game/script.rpy	591
+ch05_main_cdaed95b_1	s	나는 진지하게 들어주길 바랐어.	game/script.rpy	592
+ch05_main_b80e41e7_1	s	정말 다른 아이들은 몰라도 너만은 내 이야기를 진심으로 들어줄 줄 알았는데.	game/script.rpy	594
+ch05_main_73775cea_1	s	갈게. 오늘은.. 그냥 일찍 집에 갈게.	game/script.rpy	596
+ch05_main_1c2faf13_1	s	있지, 소문 낸 애들, 그리고 그걸 믿는 다른 애들보다	game/script.rpy	600
+ch05_main_2bf16bb7_1	s	네가 세상에서 제일 나빠.	game/script.rpy	601
+ch05_main_82b776f9_1	s	약속은 없던 걸로 하자. 갈게.	game/script.rpy	603
+ch06_main_50ff246a		나한테는 두 가지 선택만이 남았다.	game/script.rpy	610
+ch06_main_04ebefb4		서은이와의 약속을 지킬 건지, 효주를 만나 내 호기심을 해소할 것인지.	game/script.rpy	611
+ch06_main_9fc09815		그래, 서은이를 만나러 가자.	game/script.rpy	616
+ch06_main_567b3d1c		중요한 이야기일지도 몰라. 벚꽃은 나중에 보더라도 효주의 이야기를 먼저 듣자.	game/script.rpy	618
+ch07_main_299b174a		2018년 봄, 레스토랑 앞.	game/script.rpy	627
+ch07_main_05894068		오늘은 고등학교 동창회다. 어느덧 서른을 앞둔 나이에 고등학교 친구들을 다시 볼 생각을 하니 조금 들뜬 마음이다.	game/script.rpy	628
+ch07_main_be6a5df9		사실, 제일 궁금한 건 서은이였다. 3년을 붙어 다닌, 피곤하지만 밉지 않은 내 친구.	game/script.rpy	629
+ch07_main_c3df9ed2		벌써부터 북적거리는 레스토랑 안은 친숙하면서도 낯선 사람들로 가득 차 있다.	game/script.rpy	630
+ch07_main_7dbf83ec		성인이 된다는 것에 막연한 불안함이 있던 열아홉은 한 명도 없었다.	game/script.rpy	631
+ch07_main_c04d16f8		그때보다 부쩍 자라버린 어른들만 있을 뿐이었다. 기분이 묘했다.	game/script.rpy	632
+ch07_main_cbee3edb		친구들과 반갑게 인사를 하며 안부를 묻는 중에도 내 눈은 계속 서은이를 찾고 있었다.	game/script.rpy	633
+ch07_main_83ee0ea8		하지만 보이지 않는다. 이런 자리에 빠질 애가 아닌데...	game/script.rpy	634
+ch07_main_ea3ce13d	h	오랜만이네. 잘 지냈어?	game/script.rpy	636
+ch07_main_97273d4f	h	그렇구나. 좋아 보이네.	game/script.rpy	642
+ch07_main_76aed74b	h	뭐... 그래, 힘내.	game/script.rpy	645
+ch07_main_e1d51708	h	응, 잘 지냈지. 얼마 전에 겨우 취직했거든. 이제 좀 살 맛 나더라.	game/script.rpy	648
+ch07_main_18f54bbf		효주라면 서은이의 행방을 알고 있을지도 모른다. 물어보자.	game/script.rpy	651
+ch07_main_2ef5e95f		서은이 어디 있는지 알아?	game/script.rpy	652
+ch07_main_5bd86f70	h	...농담하는 거지?	game/script.rpy	653
+ch07_main_174a50c2	h	장난치지 마. 나 이런 장난 싫어해.	game/script.rpy	659
+ch07_main_4255c3a9		효주의 표정이 많이 불안해 보인다. 그냥 단순한 질문인데 주위의 술렁임이 느껴진다. 대체 왜?	game/script.rpy	661
+ch07_1_main_f80621de	h	정말 기억 안 나? 서은이는...	game/script.rpy	678
+ch07_1_main_83431e3a	h	서은이는 죽었잖아. 10년 전 오늘, 학교에서.	game/script.rpy	680
+ch07_1_main_e3d8dd1d		정신이 멍해진다. 서은이가 죽었다고?	game/script.rpy	681
+ch07_1_main_9a765568	h	교통사고. 정말 기억 안 나? 너 오늘 좀 이상하다.	game/script.rpy	683
+ch07_1_main_38589692		서은이가 죽었다고? 대체 왜?	game/script.rpy	684
+ch07_1_main_04c480ea		멍해진 정신이 좀 더 흐릿해진다. 눈 앞이 아득하다. 몸이 기울어진다.	game/script.rpy	685
+ch07_1_main_b2756645	h	...야! 정신차려!!	game/script.rpy	687
+ch07_1_main_8558cfb1		기억이 어긋난 것처럼 아파온다. 억지로 들어낸 것처럼 지운 자국이 선명하다.	game/script.rpy	688
+ch07_1_main_587a8d9d		서은이가 그랬을 리 없다. 서은이가 죽었을 리 없다. 혼란스럽다. 그 때였다.	game/script.rpy	690
+ch07_1_main_4d365ab2	d	당신이 과거에 했을 작은 선택으로 모든 것을 바꿀 수 있다면?	game/script.rpy	691
+ch07_1_main_6c972ef9		칠흑 같은 어둠 속에서 의문의 목소리가 들려온다.	game/script.rpy	692
+ch07_1_main_a6378b4d	d	그 선택으로 당신의 소중한 사람을 살릴 수 있다면?	game/script.rpy	693
+ch07_1_main_33063fb4		서은이를 살릴 수 있다고? 하지만, 이미 10년 전에 죽은 아이를 어떻게?	game/script.rpy	694
+ch07_1_main_5dcb3bc1	d	잘 생각해봐. 그 날의 너를.	game/script.rpy	695
+ch07_1_main_c4bb72f5		수수께끼 같은 말과 함께, 나는 다시 끝없는 어둠 속으로 추락했다.	game/script.rpy	696
+ch07_1_main_e83d6a9b		아래로... 아래로... 아래로...	game/script.rpy	697
+ch07_2_main_a358d980	s	나를 왜 걔한테 물어봐.	game/script.rpy	706
+ch07_2_main_2771846f		이 목소리는...	game/script.rpy	707
+ch07_2_main_e9f81a93	s	왜 그렇게 쳐다 봐? 죽은 사람 돌아온 것처럼. 오랜만이네?	game/script.rpy	708
+ch07_2_main_2693a26b		오랜만에 만난 서은이는 10년 전처럼 장난끼 넘쳤고, 기운찼다.	game/script.rpy	709
+ch07_2_main_92089184	s	밥이나 먹자. 배고파.	game/script.rpy	711
+ch07_2_main_9cecd004	s	그럼 빨리 일어나. 너 때문에 밥 먹을 시간이 줄고 있잖아.	game/script.rpy	717
+ch07_2_main_9b840cdd	s	빨리 나와라. 음식 다 떨어지기 전에.	game/script.rpy	720
+ch07_2_main_806c6f67	s	갑자기 무슨 헛소리야? 빨리 나오기나 해. 나 배고프다니까.	game/script.rpy	723
+ch07_2_main_f707a464		가자가자!!	game/script.rpy	729
+ch07_2_main_dc0a1d24	s	......너 이상해.	game/script.rpy	732
+ch07_2_main_c1276b4a	s	안돼. 빨리 나와, 빨리!!!	game/script.rpy	735
+ch07_2_main_6c08c74e	s	새삼스럽게 왜 화내. 익숙해질 때도 됐잖아. 아, 오랜만이라 적응이 안 되나?	game/script.rpy	738
+ch07_2_main_1932b064		전에도 비슷한 대화를 한 것 같은데, 기분이 묘하다.	game/script.rpy	741
+ch07_2_main_087e7a12	s	무슨 생각을 그렇게 해. 얼른 일어나라니까! 가자!	game/script.rpy	743
+ch07_2_main_225fb2a4		10년이나 지났음에도 우리는 변함없이 티격태격했고 철이 없었다.	game/script.rpy	744
+ch07_2_main_8cbb7cd1		이상하다. 제멋대로인 서은이의 모습에 짜증이 나면서도 왠지 모를 안도감이 찾아온다.	game/script.rpy	745
+ch07_2_main_6fe4e045		그리웠었다. 다시는 못 볼 사이였던 것처럼.	game/script.rpy	746
+ch07_2_main_fbe6da7b		하지만 서은이는 지금 여기 있다.	game/script.rpy	747
+ch07_2_main_8987e3e0		여전히, 그 날처럼.	game/script.rpy	748
+ch10_main_cfaf62cd		이상하다.	game/script.rpy	754
+ch10_main_25cbcf13		엄청 생생한 꿈을 꾼 것 같은데...	game/script.rpy	755
+ch10_main_db3ed287		무언가 소중한 것을 잃어버린 듯한 느낌이 들었다.	game/script.rpy	756

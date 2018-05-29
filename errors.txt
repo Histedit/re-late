@@ -2,9 +2,3 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 63: expected an indented block
-    if list(set(process_list).intersection(_process)):
-    
-
-Ren'Py Version: Ren'Py 6.99.14.3.3347
-Mon May 07 02:53:03 2018

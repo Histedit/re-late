@@ -196,10 +196,8 @@ location: ..\..\source\ioput\option\OptionList.cpp (520)
 [thread____] start 'audio'
 [provider__] start 'Provider:audio'
 [sensor____] connect 'Audio'
-[audio_____] # !WARNING! # could not find device '마이크(UFO PRO Audio Driver)'
-location: ..\..\source\Audio.cpp (399)
 [sensor____] start 'Audio'
-[thread____] start 'Audio@마이크(2- UFO PRO Audio Driver)'
+[thread____] start 'Audio@마이크(UFO PRO Audio Driver)'
 [thread____] start 'AudioActivity'
 [factory___] create instance of 'AudioIntensity'
 [transform_] start 'AudioActivity:noname004'
@@ -255,3 +253,48 @@ location: ..\..\source\TheFramework.cpp (498)
 
              press enter to stop
 
+[pipeline__] stop (runtime=163.52s)
+[thread____] terminate 'audio'
+[provider__] stop 'Provider:audio'
+[thread____] stop 'audio' after 0:02:47:065
+[sensor____] stop 'Audio'
+[thread____] terminate 'Audio@마이크(UFO PRO Audio Driver)'
+[thread____] stop 'Audio@마이크(UFO PRO Audio Driver)' after 0:02:47:022
+[sensor____] disconnect 'Audio'
+[thread____] terminate 'AudioActivity'
+[transform_] stop 'AudioActivity:noname004'
+[thread____] stop 'AudioActivity' after 0:02:47:139
+[thread____] terminate 'TriggerEventSender'
+[consume___] stop 'TriggerEventSender:noname005'
+[thread____] stop 'TriggerEventSender' after 0:02:47:140
+[thread____] terminate 'SignalPainter'
+[consume___] stop 'SignalPainter:plot'
+[thread____] terminate 'AUDIO - RAW' (single run)
+[thread____] stop 'AUDIO - RAW' after 0:02:47:140 (single run)
+[thread____] stop 'SignalPainter' after 0:02:47:137
+[thread____] terminate 'SignalPainter'
+[consume___] stop 'SignalPainter:plot1'
+[thread____] terminate 'AUDIO - ACTIVITY' (single run)
+[thread____] stop 'AUDIO - ACTIVITY' after 0:02:47:136 (single run)
+[thread____] stop 'SignalPainter' after 0:02:47:133
+[eboard____] stop event board worker
+[thread____] terminate 'EventBoardWorker'
+[thread____] stop 'EventBoardWorker' after 0:02:47:300
+[thread____] terminate 'EventConsumer'
+[thread____] stop 'EventConsumer' after 0:02:47:372
+[consume___] stop 'TupleEventSender:noname006'
+[thread____] terminate 'noname'
+[thread____] stop 'noname' after 0:02:47:499
+[thread____] terminate 'noname'
+[thread____] stop 'noname' after 0:02:47:501
+[thread____] terminate 'RESULT' (single run)
+[thread____] stop 'RESULT' after 0:02:47:509 (single run)
+[thread____] terminate 'EMOTION' (single run)
+[thread____] stop 'EMOTION' after 0:02:47:485 (single run)
+[pipeline__] framework shutdown
+[factory___] clear factory
+[factory___] clear objects
+[eboard____] release event board
+[thread____] terminate 'Pipeline' (single run)
+[thread____] stop 'Pipeline' after 0:02:44:394 (single run)
+[options___] skip save, list is readonly 'data\chunks\trigger'
