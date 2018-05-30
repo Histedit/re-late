@@ -45,6 +45,7 @@ init python:
     _preferences.afm_enable = True
     _preferences.afm_time = 15
     config.keymap['toggle_afm'].append('alt_K_F3')
+    _history = True
 
 label left:
     $ gui.direction = 0.25
@@ -61,6 +62,7 @@ label right:
 init python:
     import subprocess
     import random
+    pre_ask = ""
     dic = {}
     a_dic = {}
     a_dic["ch01_1plyr"]=["positive","negative","nonsense"]

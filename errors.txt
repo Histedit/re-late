@@ -2,3 +2,10 @@
 errors listed below, and try again.
 
 
+File "game/script.rpy", line 122: invalid syntax
+            call screen notify(pre_ask)
+                       ^
+    
+
+Ren'Py Version: Ren'Py 6.99.14.3.3347
+Wed May 30 06:22:26 2018

@@ -3,30 +3,40 @@
 While running game code:
   File "renpy/common/00start.rpy", line 226, in script call
     call _splashscreen from _call_splashscreen_1
-  File "game/script.rpy", line 216, in script call
+  File "game/script.rpy", line 215, in script call
     call menuv
-  File "game/script_story.rpy", line 9, in script
-    label play_movie (duration):
-Exception: Required parameter duration has no value.
+  File "game/script_story.rpy", line 8, in script call
+    call ch01_main
+  File "game/script_story.rpy", line 44, in script call
+    call qus("ch01_1plyr") from _call_qus
+  File "game/script.rpy", line 106, in script
+    python:
+  File "game/script.rpy", line 122, in <module>
+    renpy.call_screen(dialog)
+NameError: name '_dialog' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "renpy/common/00start.rpy", line 226, in script call
     call _splashscreen from _call_splashscreen_1
-  File "game/script.rpy", line 216, in script call
+  File "game/script.rpy", line 215, in script call
     call menuv
-  File "game/script_story.rpy", line 9, in script
-    label play_movie (duration):
-  File "C:\Users\boa65\Downloads\renpy-6.99.14.3-sdk\renpy\ast.py", line 803, in execute
-    values = apply_arguments(self.parameters, renpy.store._args, renpy.store._kwargs)
-  File "C:\Users\boa65\Downloads\renpy-6.99.14.3-sdk\renpy\ast.py", line 152, in apply_arguments
-    return parameters.apply(args, kwargs, ignore_errors)
-  File "C:\Users\boa65\Downloads\renpy-6.99.14.3-sdk\renpy\ast.py", line 120, in apply
-    raise Exception("Required parameter %s has no value." % name)
-Exception: Required parameter duration has no value.
+  File "game/script_story.rpy", line 8, in script call
+    call ch01_main
+  File "game/script_story.rpy", line 44, in script call
+    call qus("ch01_1plyr") from _call_qus
+  File "game/script.rpy", line 106, in script
+    python:
+  File "C:\Users\boa65\Downloads\renpy-6.99.14.3-sdk\renpy\ast.py", line 862, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\boa65\Downloads\renpy-6.99.14.3-sdk\renpy\python.py", line 1888, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/script.rpy", line 122, in <module>
+    renpy.call_screen(dialog)
+NameError: name '_dialog' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 6.99.14.3.3347
 re-late 1.0
-Wed May 30 03:11:36 2018
+Wed May 30 06:32:31 2018

@@ -5,7 +5,6 @@
 init offset = -1
 
 
-
 ################################################################################
 ## Styles
 ################################################################################
@@ -1356,7 +1355,7 @@ screen nvl(dialogue, items=None):
     add SideImage() xalign 0.0 yalign 1.0
 
 
-screen dialog(message, ok_action):
+screen dialog(message):
 
 
     modal True
@@ -1378,11 +1377,11 @@ screen dialog(message, ok_action):
             style "confirm_prompt"
             xalign 0.25
 
-        hbox:
-            xalign 0.25
-            spacing 100
+        #hbox:
+            #xalign 0.25
+            #spacing 100
 
-            textbutton _("OK") action ok_action
+        timer 3.25 action Hide('dialog')
 
 screen nvl_dialogue(dialogue):
 

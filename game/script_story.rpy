@@ -40,13 +40,14 @@ label ch01_main:
     show se 1 at t11
     voice "se03.ogg"
     s "점심시간이라니까? 수업 중에 잠이나 자고. 아무튼 점심 먹으러 안 가?" #normal
-
+    $ pre_ask = "점심시간이라니까? 수업 중에 잠이나 자고. 아무튼 점심 먹으러 안 가?"
     call qus("ch01_1plyr") from _call_qus
 
     if dic["ch01_1plyr"] == "positive":
         show se 3 at t11     
         voice "se04.ogg"
         s "그럼 빨리 일어나. 너 때문에 밥 먹을 시간이 줄고 있잖아." #smile
+        $ pre_ask = "그럼 빨리 일어나. 너 때문에 밥 먹을 시간이 줄고 있잖아."
     elif dic["ch01_1plyr"] == "negative":
         show se 5 at t11
         voice "se05.ogg"
