@@ -27,6 +27,3 @@ https://rawgit.com/hcmlab/emovoice/master/docs/index.html
 # License
 The framework is released under LGPL (see LICENSE).
 Please note custom license files for the plug-ins (see LICENSE.*).
-
-# Author
-Johannes Wagner, Lab for Human Centered Multimedia, 2017
